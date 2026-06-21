@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://savvyintern.com/sitemap.xml
+
+# Allow Google
+User-agent: Googlebot
+Allow: /
+
+# Allow Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (optional)
+Crawl-delay: 1
