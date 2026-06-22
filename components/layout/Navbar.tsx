@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,19 +9,17 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle scroll effect for a sleek sticky header
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation Links
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Courses", href: "/courses" },
     { name: "Careers", href: "/careers" },
-    { name: "Hire Talent", href: "/hire-talent" },
+    { name: "Hire Savvy Grads", href: "/hire-savvy-grads" },
     { name: "About Us", href: "/about" },
     { name: "Support", href: "/support" },
   ];
@@ -31,15 +28,12 @@ export function Navbar() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-white/90 backdrop-blur-md py-3"}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         
-        {/* NEW IMAGE LOGO - Resized to be much smaller */}
+        {/* FIX 1: Standard HTML Image to stop Next.js warnings */}
         <Link href="/" className="flex items-center gap-2">
-          <Image 
+          <img 
             src="/SAAVY.png" 
-            alt="Savvy Intern Logo" 
-            width={70}  // Reduced base width
-            height={70} // Match width for a square logo ratio
-            className="object-contain w-14 md:w-16 h-auto" // Strictly limits size via Tailwind
-            priority
+            alt="Savvy Intery Logo" 
+            className="w-14 md:w-16 h-auto object-contain"
           />
         </Link>
 
@@ -52,19 +46,19 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop Actions - Button Routing Fixed & No Console Errors */}
+        {/* FIX 2: Removed asChild to stop the giant red React error */}
         <div className="hidden lg:flex items-center gap-4">
-          <Button variant="ghost" className="font-bold text-[#0B3B7A] hover:text-[#38BDF8] hover:bg-transparent p-0">
-            <Link href="/support" className="px-4 py-2 w-full h-full flex items-center">
+          <Link href="/support">
+            <Button variant="ghost" className="font-bold text-[#0B3B7A] hover:text-[#38BDF8] hover:bg-transparent px-4 py-2">
               Talk To An Expert
-            </Link>
-          </Button>
+            </Button>
+          </Link>
           
-          <Button className="bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold rounded-full p-0">
-            <Link href="/courses" className="px-6 py-2 w-full h-full flex items-center">
+          <Link href="/courses">
+            <Button className="bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold rounded-full px-6 py-2">
               Explore Programs
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -87,22 +81,21 @@ export function Navbar() {
             </Link>
           ))}
           
-          {/* Mobile Actions - Button Routing Fixed */}
           <div className="flex flex-col gap-3 pt-2">
-            <Button variant="outline" className="w-full border-gray-200 text-[#0B3B7A] font-bold p-0">
-              <Link href="/support" onClick={() => setIsOpen(false)} className="px-4 py-2 w-full h-full flex items-center justify-center">
+            <Link href="/support" onClick={() => setIsOpen(false)}>
+              <Button variant="outline" className="w-full border-gray-200 text-[#0B3B7A] font-bold py-2">
                 Talk To An Expert
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             
-            <Button className="w-full bg-[#0B3B7A] text-white font-bold p-0">
-              <Link href="/courses" onClick={() => setIsOpen(false)} className="px-4 py-2 w-full h-full flex items-center justify-center">
+            <Link href="/courses" onClick={() => setIsOpen(false)}>
+              <Button className="w-full bg-[#0B3B7A] text-white font-bold py-2">
                 Explore Programs
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       )}
     </header>
   );
-}
+} 
