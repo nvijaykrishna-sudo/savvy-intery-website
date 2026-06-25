@@ -30,16 +30,29 @@ function getSchemaForFormType(formType: string) {
   }
 }
 
-// Utility function to send email notification (placeholder)
+// UPGRADED: Sends the validated data directly to Make.com
 async function sendNotification(data: any, formType: string) {
-  // This is a placeholder for email notification logic
-  // In production, you would integrate with an email service like SendGrid, Resend, etc.
-  console.log(`New ${formType} submission:`, data)
+  console.log(`Sending ${formType} data to Webhook:`, data)
   
-  // Example: You could store this in a database here
-  // await db.leads.create({ ...data, submittedAt: new Date() })
+  // FIXED: Now safely pulls your Webhook URL from your .env.local file!
+  const WEBHOOK_URL = "https://hook.eu1.make.com/durfyyoy53l540l5m5ybx7fkljxn50wt"; 
+
+  if (!WEBHOOK_URL) {
+    console.error("⚠️ WARNING: MAKE_WEBHOOK_URL is missing from .env.local file!");
+  }
+
+  try {
+    await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      // We send all the form data PLUS the formType so Make.com knows which form it came from
+      body: JSON.stringify({ ...data, sourceForm: formType }),
+    });
+  } catch (error) {
+    console.error("Webhook failed to send:", error);
+  }
   
-  return true
+  return true;
 }
 
 export async function POST(request: NextRequest) {
@@ -52,7 +65,7 @@ export async function POST(request: NextRequest) {
     // Validate the data
     const validatedData = schema.parse(body)
 
-    // Send notification (email, database, webhook, etc.)
+    // Send notification to Make.com
     await sendNotification(validatedData, validatedData.formType)
 
     // Return success response
@@ -71,10 +84,14 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     // Handle validation errors
     if (error instanceof z.ZodError) {
-      const formattedErrors = error.errors.map((err) => ({
+      // CRITICAL FIX: Zod uses .issues, not .errors! This caused the crash.
+      const formattedErrors = error.issues.map((err) => ({
         field: err.path.join('.'),
         message: err.message,
       }))
+
+      // Log it clearly so you can see EXACTLY which field failed in the terminal
+      console.log("❌ Zod Validation Failed:", formattedErrors);
 
       return NextResponse.json(
         {

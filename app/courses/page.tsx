@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { BookOpen, Clock, Users, ArrowRight, PlayCircle } from "lucide-react";
-import { courses } from "@/lib/courses"; // Importing our data file
+import { courses } from "@/lib/courses";
 import { Button } from "@/components/ui/button";
 
 export default function CoursesPage() {
@@ -49,7 +49,7 @@ export default function CoursesPage() {
           <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8 relative z-10">
             Become a valued member of SAVVY INTERN and enjoy unlimited access to our vast library of top-rated Video Courses.
           </p>
-          <Button className="bg-[#38BDF8] hover:bg-white text-[#0B3B7A] font-bold rounded-full px-8 py-6 text-lg relative z-10 shadow-lg transition-transform hover:scale-105">
+          <Button className="bg-[#38BDF8] hover:bg-white text-[#0B3B7A] font-bold rounded-full px-8 py-6 text-lg relative z-10 shadow-lg transition-transform hover:scale-105 cursor-pointer">
             Subscribe Now
           </Button>
         </div>
@@ -95,16 +95,18 @@ function CourseCard({ course }: { course: any }) {
           </div>
         </div>
 
-        {/* Bottom Bar: Price & Button */}
+        {/* Bottom Bar: Price & Button FIXED (Removed asChild to stop the crash) */}
         <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-100">
           <div className="text-xl font-black text-gray-900">
             ₹{course.price}
           </div>
+          
           <Link href={`/courses/${course.id}`}>
-            <Button variant="outline" className="border-gray-200 text-[#0B3B7A] hover:bg-[#38BDF8]/10 hover:text-[#38BDF8] hover:border-[#38BDF8]/30 rounded-full font-bold group-hover:bg-[#0B3B7A] group-hover:text-white group-hover:border-[#0B3B7A]">
+            <Button className="bg-white border-2 border-[#0B3B7A] text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white rounded-full font-bold transition-colors cursor-pointer group-hover:bg-[#0B3B7A] group-hover:text-white flex items-center">
               View Details <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
+          
         </div>
       </div>
     </div>

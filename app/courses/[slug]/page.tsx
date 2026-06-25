@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
     CheckCircle2, ChevronDown, ChevronUp, Clock, BookOpen, 
-    MonitorPlay, ArrowLeft, Star, Users, PlayCircle, Trophy, Layers, GraduationCap, HelpCircle, UserCheck 
+    MonitorPlay, ArrowLeft, Star, Users, PlayCircle, Trophy, Layers, GraduationCap, HelpCircle, UserCheck, Award 
 } from "lucide-react";
 
 // --- THE COMPLETE MASTER COURSE DATABASE ---
@@ -15,7 +15,7 @@ const courseDatabase: Record<string, any> = {
     title: "Artificial Intelligence",
     description: "Master AI Evolution, Machine Learning, NLP, and Deep Learning with Python.",
     duration: "10 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "1,200+",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070",
+    image: "/ai-course.jpg", // Fixed Path
     modules: [
       { title: "Introduction to AI and Python", topics: ["AI Evolution & Classification", "Python Basics & Visualization", "Key Python Concepts"] },
       { title: "Mathematical Foundations", topics: ["Linear Algebra - Part 1 & 2", "Dot Product", "Statistics - Part 1 & 2"] },
@@ -30,7 +30,7 @@ const courseDatabase: Record<string, any> = {
     title: "Machine Learning with Python",
     description: "Deep dive into OOP, Supervised/Unsupervised Learning, CNNs, and Deep Learning Frameworks.",
     duration: "10 Weeks", lessons: "90+ Lessons", level: "Advanced", students: "950+",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=2070",
+    image: "/ml-course.jpg", // Fixed Path
     modules: [
       { title: "Introduction to ML and Python", topics: ["Intro to ML & Python Basics", "Python Operators & Control Structures", "OOP & Functional Programming", "Python Modules & Packages"] },
       { title: "Data Analysis and Supervised Learning", topics: ["Exploratory Data Analysis", "Supervised Learning: Regression", "Classification: Logistic & k-NN", "SVM", "Decision Tree & Random Forest"] },
@@ -44,7 +44,7 @@ const courseDatabase: Record<string, any> = {
     title: "Data Analytics & Data Science",
     description: "Extract insights from raw data. Master Python, SQL, exploratory data analysis, and predictive modeling.",
     duration: "12 Weeks", lessons: "110+ Lessons", level: "Beginner to Advanced", students: "2,100+",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
+    image: "/data-science.jpg", // Fixed Path
     modules: [
       { title: "Data Analytics Foundations", topics: ["Introduction to Data Science & Analytics", "Excel for Data Analysis", "Advanced Excel Dashboards"] },
       { title: "Database Management", topics: ["SQL Basics & Syntax", "Advanced SQL Queries & Joins", "Database Design"] },
@@ -57,7 +57,7 @@ const courseDatabase: Record<string, any> = {
     title: "Web Development (HTML, CSS, JS, Bootstrap)",
     description: "Learn frontend and backend basics to build responsive, modern websites.",
     duration: "8 Weeks", lessons: "75+ Lessons", level: "Beginner", students: "3,400+",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2072",
+    image: "/web-dev.jpg", // Fixed Path
     modules: [
       { title: "Web Development Basics", topics: ["Introduction to Web Development", "HTML Lists and Forms"] },
       { title: "CSS Fundamentals", topics: ["Introduction to CSS", "CSS Colors, Backgrounds, Borders", "Margins, Padding, and Box Model"] },
@@ -73,7 +73,7 @@ const courseDatabase: Record<string, any> = {
     title: "Full Stack (React, Django, MySQL)",
     description: "Master full-stack development by combining React for frontend and Django for backend.",
     duration: "14 Weeks", lessons: "140+ Lessons", level: "Advanced", students: "1,800+",
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=2070",
+    image: "/full-stack.jpg", // Fixed Path
     modules: [
       { title: "Web Development Foundations", topics: ["Web Development Overview", "HTML Basics and Forms", "HTML Tables and Attributes"] },
       { title: "CSS and Responsive Design", topics: ["CSS Basics and Selectors", "Box Model and Media Queries"] },
@@ -89,7 +89,7 @@ const courseDatabase: Record<string, any> = {
     title: "React Mastery",
     description: "Master functional components, hooks, state management, and SSR with Next.js.",
     duration: "8 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "2,200+",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=2070",
+    image: "/react.jpg", // Fixed Path
     modules: [
       { title: "Introduction to React", topics: ["React Overview & Setup", "Functional vs Class Components & Lifecycle", "Styling: Inline, CSS Modules, Theming"] },
       { title: "Handling Forms and State", topics: ["Forms, Validation & Custom Hooks", "State Management: useState, useReducer, Redux"] },
@@ -104,7 +104,7 @@ const courseDatabase: Record<string, any> = {
     title: "Java Programming",
     description: "Learn core Java, OOP concepts, Multithreading, and Database connectivity.",
     duration: "10 Weeks", lessons: "100+ Lessons", level: "Beginner to Advanced", students: "1,600+",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070",
+    image: "/java.jpg", // Fixed Path
     modules: [
       { title: "Java Fundamentals", topics: ["Java Intro and Setup", "Java Basics and Installation", "Operators, Type Casting, and Enums", "Control Flow in Java"] },
       { title: "Object-Oriented Programming", topics: ["Classes, Objects and Methods", "Constructors and Encapsulation", "this, super, Abstract Classes, Interfaces", "Adapter Classes and Polymorphism"] },
@@ -119,7 +119,7 @@ const courseDatabase: Record<string, any> = {
     title: "Cloud Computing & AWS",
     description: "Learn cloud infrastructure, EC2, AWS Lambda, VPC, and DevOps CI/CD pipelines.",
     duration: "10 Weeks", lessons: "95+ Lessons", level: "Intermediate", students: "1,400+",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072",
+    image: "/cloud.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Cloud Computing", topics: ["Intro to Cloud Computing & Service Models", "Deployment Models & AWS Overview", "AWS Infrastructure & Account Setup"] },
       { title: "Compute Services", topics: ["Amazon EC2 & Compute Services", "Creating EC2 Instances & AMI", "AWS Lambda & Elastic Beanstalk"] },
@@ -134,7 +134,7 @@ const courseDatabase: Record<string, any> = {
     title: "Ethical Hacking & Cyber Security",
     description: "Master vulnerability assessment, cryptography, malware analysis, and network defense.",
     duration: "12 Weeks", lessons: "120+ Lessons", level: "Advanced", students: "2,500+",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=2070",
+    image: "/hacking.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Ethical Hacking", topics: ["Ethical Hacking Overview", "Hacking Types", "Testing vs Assessment", "Hacking Tools and Nmap demo"] },
       { title: "Information Gathering and Social Engineering", topics: ["Information Gathering", "Social Engineering Basics", "Social Engineering Defense"] },
@@ -150,7 +150,7 @@ const courseDatabase: Record<string, any> = {
     title: "Internet of Things (IoT)",
     description: "Learn IoT architecture, edge computing, smart manufacturing, and IoT security.",
     duration: "10 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "800+",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070",
+    image: "/iot.jpg", // Fixed Path
     modules: [
       { title: "IoT Basics and Evolution", topics: ["Introduction to IoT", "IoT Evolution and Importance", "IoT Applications", "IoT Challenges and Opportunities"] },
       { title: "IoT Networking and Connectivity", topics: ["Networking Basics in IoT", "IoT Connectivity Modules", "Short and Long-Range IoT Communication", "IoT Application Layer Protocols"] },
@@ -164,7 +164,7 @@ const courseDatabase: Record<string, any> = {
     title: "Embedded Systems",
     description: "Master microcontrollers, C/C++ programming, IoT sensors, and PCB design.",
     duration: "12 Weeks", lessons: "100+ Lessons", level: "Advanced", students: "900+",
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=2069",
+    image: "/embedded.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Embedded Systems", topics: ["Embedded Systems Overview", "Microcontrollers vs Microprocessors"] },
       { title: "Electronics and Circuit Design", topics: ["Digital and Analog Electronics Basics", "Circuit Design and Prototyping"] },
@@ -178,7 +178,7 @@ const courseDatabase: Record<string, any> = {
     title: "Hybrid and Electric Vehicles",
     description: "Learn EV motor tech, battery management systems (BMS), and vehicle dynamics.",
     duration: "10 Weeks", lessons: "90+ Lessons", level: "Intermediate", students: "1,100+",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=2072",
+    image: "/ev.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Electric and Hybrid Vehicles", topics: ["Vehicle Overview", "History of HEVs and EVs", "Environmental Impact & Sustainability", "Global Market Trends & Regulations"] },
       { title: "Automotive Engineering Foundations", topics: ["Basics of Automotive Engineering", "Vehicle Dynamics", "Engines vs. Electric Motors", "Transmission & Drivetrains", "Aerodynamics & Efficiency"] },
@@ -192,7 +192,7 @@ const courseDatabase: Record<string, any> = {
     title: "Robotics",
     description: "Master kinematics, ROS programming, computer vision, and machine learning in robotics.",
     duration: "12 Weeks", lessons: "115+ Lessons", level: "Advanced", students: "750+",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2070",
+    image: "/robotics.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Robotics", topics: ["Introduction & History of Robotics", "Mechanical Components & Power Systems", "End Effectors & 3D Printing in Robotics"] },
       { title: "Kinematics and Control Systems", topics: ["Kinematics & Motion Control", "Degrees of Freedom & Dynamic Control", "Control & Trajectory Planning"] },
@@ -206,7 +206,7 @@ const courseDatabase: Record<string, any> = {
     title: "AutoCAD & Civil 3D",
     description: "Master 2D/3D drafting, corridor design, pipe networks, and surveying tools.",
     duration: "8 Weeks", lessons: "70+ Lessons", level: "Beginner to Intermediate", students: "1,850+",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2071",
+    image: "/autocad.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Civil 3D and Basic Tools", topics: ["Civil 3D Overview and Project Setup", "Basic Drawing Tools", "Editing Tools Overview"] },
       { title: "Surveying and Surface Modeling", topics: ["Surveying and Importing Data", "Managing Point Groups", "Surface Creation and Editing", "Surface Analysis Basics"] },
@@ -220,7 +220,7 @@ const courseDatabase: Record<string, any> = {
     title: "Construction Planning Management",
     description: "Learn CPM, PERT, BIM, contract management, and sustainable construction practices.",
     duration: "10 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "1,050+",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070",
+    image: "/construction.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Construction Management", topics: ["Construction Industry Overview", "Planning and Project Life Cycle", "Construction Standards in India"] },
       { title: "Project Planning and Scheduling", topics: ["Financial Planning and WBS", "Scheduling and Gantt Charts", "Critical Path Method (CPM)", "Floats, PERT and Resource Allocation"] },
@@ -234,7 +234,7 @@ const courseDatabase: Record<string, any> = {
     title: "Finance & Financial Modeling",
     description: "Master financial statements, derivatives, taxation, FinTech, and banking operations.",
     duration: "10 Weeks", lessons: "95+ Lessons", level: "Beginner to Advanced", students: "2,600+",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=2070",
+    image: "/finance.jpg", // Fixed Path
     modules: [
       { title: "Finance Foundations", topics: ["Finance Overview and Functions", "Financial Statements and Ratio Analysis", "Capital Budgeting and M&A"] },
       { title: "Banking and Financial Markets", topics: ["Indian Banking System", "Stock Exchanges and Mutual Funds", "Derivatives and Risk Management"] },
@@ -248,7 +248,7 @@ const courseDatabase: Record<string, any> = {
     title: "Human Resources (HR)",
     description: "Learn talent acquisition, labor laws, performance management, and HR analytics.",
     duration: "8 Weeks", lessons: "75+ Lessons", level: "Beginner", students: "1,900+",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2070",
+    image: "/hr.jpg", // Fixed Path
     modules: [
       { title: "Foundations of HRM", topics: ["Intro to HRM & Its Importance", "Evolution & Strategic HRM"] },
       { title: "Recruitment, Training & Performance", topics: ["Recruitment Strategies & Selection Process", "Training Needs & Program Design", "Employee Development & Career Planning", "Performance Management & Appraisal"] },
@@ -261,7 +261,7 @@ const courseDatabase: Record<string, any> = {
     title: "Digital Marketing",
     description: "Master SEO, SEM, content strategy, programmatic advertising, and marketing analytics.",
     duration: "8 Weeks", lessons: "80+ Lessons", level: "Beginner", students: "3,100+",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015",
+    image: "/marketing.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Digital Marketing", topics: ["Intro to Digital Marketing", "Digital vs. Traditional Marketing", "Website Creation and UX/UI", "SEO and Mobile Optimization"] },
       { title: "Content and Social Media Marketing", topics: ["Content Marketing Basics", "Video and Podcast Marketing", "Social Media Marketing Overview", "Social Media Advertising"] },
@@ -274,7 +274,7 @@ const courseDatabase: Record<string, any> = {
     title: "Stock Marketing",
     description: "Master technical analysis, derivative trading, market timing, and risk management.",
     duration: "8 Weeks", lessons: "70+ Lessons", level: "Intermediate", students: "2,800+",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=2070",
+    image: "/finance.jpg", // Fixed Path
     modules: [
       { title: "Introduction to Indian Financial Markets", topics: ["Indian Financial Market Overview", "Issue Process and Public Issues"] },
       { title: "Market Operations and Intermediaries", topics: ["Market Intermediaries and Trade Execution", "Corporate Actions and Cross Margining"] },
@@ -377,8 +377,9 @@ export default function CourseDetailsPage() {
         <div className="container mx-auto px-4 md:px-6">
           <ul className="flex space-x-8 overflow-x-auto py-4 font-bold text-gray-600 text-sm uppercase tracking-wider">
             <li><a href="#about" className="hover:text-[#38BDF8] transition-colors">About</a></li>
-            <li><a href="#curriculum" className="hover:text-[#38BDF8] transition-colors">Syllabus</a></li>
+            <li><a href="#topics" className="hover:text-[#38BDF8] transition-colors">Topics</a></li>
             <li><a href="#result" className="hover:text-[#38BDF8] transition-colors">Outcomes</a></li>
+            <li><a href="#certificate" className="hover:text-[#38BDF8] transition-colors">Certificate</a></li>
             <li><a href="#faq" className="hover:text-[#38BDF8] transition-colors">FAQ</a></li>
             <li><a href="#instructor" className="hover:text-[#38BDF8] transition-colors">Instructor</a></li>
           </ul>
@@ -412,16 +413,16 @@ export default function CourseDetailsPage() {
               </section>
 
               {/* SECTION: CURRICULUM (Dynamic Accordion) */}
-              <section id="curriculum" className="scroll-mt-24">
+              <section id="topics" className="scroll-mt-24">
                 <h2 className="text-3xl font-extrabold text-[#0B3B7A] mb-6 flex items-center gap-3">
-                  <Layers className="w-8 h-8 text-[#38BDF8]" /> Course Syllabus
+                  <Layers className="w-8 h-8 text-[#38BDF8]" /> Course Topics
                 </h2>
                 <div className="space-y-4">
                   {course.modules.map((module: any, index: number) => (
                     <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                       <button 
                         onClick={() => setOpenModule(openModule === index ? null : index)}
-                        className="w-full px-6 py-5 flex items-center justify-between bg-gray-50/50 hover:bg-gray-50 text-left transition-colors"
+                        className="w-full px-6 py-5 flex items-center justify-between bg-gray-50/50 hover:bg-gray-50 text-left transition-colors cursor-pointer"
                       >
                         <div className="flex items-center gap-4">
                             <div className="h-10 w-10 bg-[#0B3B7A]/10 text-[#0B3B7A] font-bold rounded-full flex items-center justify-center text-sm shrink-0">
@@ -465,6 +466,46 @@ export default function CourseDetailsPage() {
                       <p className="text-gray-700 font-medium">{result}</p>
                     </div>
                   ))}
+                </div>
+              </section>
+
+              {/* SECTION: CERTIFICATE (Fixed Path) */}
+              <section id="certificate" className="scroll-mt-24">
+                <h2 className="text-3xl font-extrabold text-[#0B3B7A] mb-6 flex items-center gap-3">
+                  <Award className="w-8 h-8 text-[#38BDF8]" /> Official Certificate
+                </h2>
+                <div className="bg-gray-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                  <div className="flex-1 space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900">Get Industry Recognized</h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      Upon successful completion of this program and your capstone project, you will earn a verified training completion certificate. This certificate highlights your skills and is highly valued by modern employers.
+                    </p>
+                    <ul className="space-y-3 mt-4 text-gray-700 font-medium">
+                      <li className="flex items-center gap-3">
+                        <div className="bg-green-100 p-1.5 rounded-full"><CheckCircle2 className="w-4 h-4 text-green-600" /></div>
+                        Shareable on LinkedIn
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="bg-green-100 p-1.5 rounded-full"><CheckCircle2 className="w-4 h-4 text-green-600" /></div>
+                        Validation ID for Authenticity
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="bg-green-100 p-1.5 rounded-full"><CheckCircle2 className="w-4 h-4 text-green-600" /></div>
+                        MSME & Startup India Recognized
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  {/* Certificate Image Frame */}
+                  <div className="flex-1 w-full relative">
+                    <div className="rounded-2xl overflow-hidden border-8 border-white shadow-xl bg-white hover:scale-105 transition-transform duration-300">
+                      <img 
+                        src="/certificate-sample.jpg" 
+                        alt="Training Completion Certificate" 
+                        className="w-full h-auto object-contain" 
+                      />
+                    </div>
+                  </div>
                 </div>
               </section>
 
@@ -531,12 +572,12 @@ export default function CourseDetailsPage() {
 
                 <div className="space-y-3">
                   <Link href="#expert-form" className="block">
-                    <Button className="w-full bg-[#38BDF8] hover:bg-[#0B3B7A] text-[#0B3B7A] hover:text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all">
+                    <Button className="w-full bg-[#38BDF8] hover:bg-[#0B3B7A] text-[#0B3B7A] hover:text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all cursor-pointer">
                       Enroll Now
                     </Button>
                   </Link>
                   <Link href="#expert-form" className="block">
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white font-bold h-14 rounded-xl shadow-md transition-all">
+                    <Button className="w-full bg-black hover:bg-gray-800 text-white font-bold h-14 rounded-xl shadow-md transition-all cursor-pointer">
                       Talk to an Expert
                     </Button>
                   </Link>
@@ -579,7 +620,7 @@ export default function CourseDetailsPage() {
                 <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 outline-none" value={course.title} readOnly />
               </div>
               
-              <Button type="submit" className="w-full bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all">
+              <Button type="submit" className="w-full bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all cursor-pointer">
                 Submit Details
               </Button>
               

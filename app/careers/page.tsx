@@ -63,24 +63,24 @@ export default function CareersPage() {
                 Gain practical experience, work on real-world projects, learn from industry mentors, and build the skills employers value most. Whether you're a student, fresher, or career switcher, our opportunities help you stand out.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                <a href="#opportunities">
-                  <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105">
+                <Link href="#opportunities">
+                  <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-white text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105 cursor-pointer">
                     Explore Opportunities
                   </Button>
-                </a>
-                <a href="#apply-form">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm">
+                </Link>
+                <Link href="#apply-form">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white/20 bg-transparent text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm cursor-pointer">
                     Apply Now
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
 
-            {/* Right: Hero Image */}
+            {/* Right: Hero Image (LOCAL IMAGE) */}
             <div className="hidden lg:block relative">
               <div className="rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl relative z-10 h-[450px]">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" 
+                  src="/careers-hero.jpg" 
                   alt="Students collaborating" 
                   className="w-full h-full object-cover" 
                 />
@@ -104,7 +104,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 3. TRENDING OPPORTUNITIES (With Images) */}
+      {/* 3. TRENDING OPPORTUNITIES (LOCAL IMAGES) */}
       <section id="opportunities" className="py-24 bg-gray-50/50 w-full pt-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -117,42 +117,42 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <InternshipCard 
               title="Full Stack Web Development"
-              image="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=600"
+              image="/card-web.jpg"
               icon={Code} duration="8 Weeks" mode="Online"
               description="Work on modern web applications using HTML, CSS, JavaScript, React, APIs, and databases. Gain practical development experience."
               skills={["Frontend Development", "Backend Basics", "API Integration", "Git & GitHub", "Deployment"]}
             />
             <InternshipCard 
               title="Artificial Intelligence"
-              image="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600"
+              image="/ai-course.jpg"
               icon={Cpu} duration="8 Weeks" mode="Online"
               description="Explore Artificial Intelligence, Prompt Engineering, AI Tools, Automation Workflows, and practical business applications."
               skills={["AI Fundamentals", "Generative AI", "Prompt Engineering", "AI Automation", "Business Use Cases"]}
             />
             <InternshipCard 
               title="Data Analytics"
-              image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+              image="/data-science.jpg"
               icon={Database} duration="8 Weeks" mode="Online"
               description="Learn how organizations use data to drive decisions. Build dashboards, analyze datasets, and develop analytical thinking."
               skills={["Excel", "SQL", "Power BI", "Data Visualization", "Reporting"]}
             />
             <InternshipCard 
               title="Digital Marketing"
-              image="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=600"
+              image="/card-marketing.jpg"
               icon={Megaphone} duration="8 Weeks" mode="Online"
               description="Gain hands-on experience in SEO, content marketing, social media management, campaign planning, and digital growth."
               skills={["SEO", "Social Media Marketing", "Content Strategy", "Analytics", "Lead Generation"]}
             />
             <InternshipCard 
               title="UI/UX Design"
-              image="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600"
+              image="/card-uiux.jpg"
               icon={PenTool} duration="6 Weeks" mode="Online"
               description="Design modern user experiences and interfaces using industry-standard tools while working on practical portfolio projects."
               skills={["Figma", "Wireframing", "Prototyping", "User Research", "Design Systems"]}
             />
             <InternshipCard 
               title="Cyber Security"
-              image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600"
+              image="/hacking.jpg"
               icon={Shield} duration="8 Weeks" mode="Online"
               description="Learn security fundamentals, threat awareness, network security concepts, and cybersecurity best practices."
               skills={["Cyber Security", "Network Security", "Risk Assessment", "Security Awareness", "Ethical Practices"]}
@@ -195,10 +195,10 @@ export default function CareersPage() {
               </div>
             </div>
 
-            {/* Right: Benefits List (Updated with subtle image background) */}
+            {/* Right: Benefits List (LOCAL IMAGE) */}
             <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-full h-48 opacity-20 z-0">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Office Collaboration" />
+                <img src="/benefits-bg.jpg" className="w-full h-full object-cover" alt="Office Collaboration" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0B3B7A]"></div>
               </div>
               
@@ -218,7 +218,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 6. APPLICATION FORM SECTION */}
+      {/* 6. APPLICATION FORM SECTION (LOCAL IMAGE) */}
       <section id="apply-form" className="py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row">
@@ -226,7 +226,7 @@ export default function CareersPage() {
             {/* Left: Image & Info Area */}
             <div className="lg:w-2/5 bg-[#0B3B7A] text-white relative overflow-hidden flex flex-col justify-center p-8 md:p-12">
               <div className="absolute inset-0 opacity-20">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Professional applying" className="w-full h-full object-cover" />
+                <img src="/form-bg.jpg" alt="Professional applying" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Apply For An Internship</h2>
@@ -257,19 +257,19 @@ export default function CareersPage() {
             
             {/* Right: Form Area */}
             <div className="lg:w-3/5 p-8 md:p-12">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="font-semibold text-gray-700 text-sm">Full Name</label>
-                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="John Doe" />
+                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="John Doe" required />
                   </div>
                   <div className="space-y-2">
                     <label className="font-semibold text-gray-700 text-sm">Email Address</label>
-                    <input type="email" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="john@example.com" />
+                    <input type="email" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="john@example.com" required />
                   </div>
                   <div className="space-y-2">
                     <label className="font-semibold text-gray-700 text-sm">Mobile Number</label>
-                    <input type="tel" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="+91 98765 43210" />
+                    <input type="tel" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="+91 98765 43210" required />
                   </div>
                   <div className="space-y-2">
                     <label className="font-semibold text-gray-700 text-sm">Current Qualification</label>
@@ -297,7 +297,7 @@ export default function CareersPage() {
                   <textarea className="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" rows={4} placeholder="Tell us about your goals..."></textarea>
                 </div>
 
-                <Button className="w-full h-14 bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white font-extrabold rounded-xl shadow-lg transition-all text-lg">
+                <Button type="submit" className="w-full h-14 bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white font-extrabold rounded-xl shadow-lg transition-all text-lg cursor-pointer">
                   Submit Application
                 </Button>
               </form>
@@ -314,14 +314,16 @@ export default function CareersPage() {
             Ready to gain practical experience and build valuable skills? Join SAVVY INTERN and take the next step toward your professional growth.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#apply-form">
-              <Button size="lg" className="w-full sm:w-auto bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white rounded-full h-14 px-10 font-bold shadow-lg">
+            <Link href="#apply-form">
+              <Button size="lg" className="w-full sm:w-auto bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white rounded-full h-14 px-10 font-bold shadow-lg cursor-pointer transition-colors">
                 Apply Today
               </Button>
-            </a>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto border-gray-200 text-[#0B3B7A] hover:bg-gray-50 rounded-full h-14 px-10 font-bold">
-              Talk To An Expert
-            </Button>
+            </Link>
+            <Link href="/support">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-[#0B3B7A] text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white rounded-full h-14 px-10 font-bold cursor-pointer transition-colors">
+                Talk To An Expert
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -383,11 +385,11 @@ function InternshipCard({ title, image, duration, mode, icon: Icon, description,
       </div>
 
       <div className="p-6 md:p-8 pt-0 mt-auto">
-        <a href="#apply-form">
-          <Button className="w-full h-12 bg-white border-2 border-[#0B3B7A] text-[#0B3B7A] font-bold rounded-xl shadow-sm group-hover:bg-[#0B3B7A] group-hover:text-white transition-colors">
+        <Link href="#apply-form" className="block w-full">
+          <Button className="w-full h-12 bg-white border-2 border-[#0B3B7A] text-[#0B3B7A] font-bold rounded-xl shadow-sm group-hover:bg-[#0B3B7A] group-hover:text-white transition-colors cursor-pointer flex items-center justify-center">
             Apply Now <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-        </a>
+        </Link>
       </div>
     </div>
   );

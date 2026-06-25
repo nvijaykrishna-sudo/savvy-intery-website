@@ -5,11 +5,49 @@ import Link from "next/link";
 import { 
   Phone, Mail, MapPin, Clock, MessageSquare, ChevronDown, 
   Briefcase, GraduationCap, Building2, HelpCircle, 
-  MessageCircle, Send, PhoneCall, CheckCircle2
+  MessageCircle, Send, PhoneCall, CheckCircle2, Loader2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function SupportPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // THE FIX: Save the form reference immediately so it doesn't vanish later!
+    const form = e.currentTarget;
+    
+    setIsSubmitting(true);
+    
+    // Grab all the data from the inputs using our saved form reference
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      
+      const responseText = await response.text(); 
+      
+      if (response.ok) {
+        setIsSuccess(true);
+        form.reset(); // Use the saved reference to safely clear the form!
+        setTimeout(() => setIsSuccess(false), 4000); // Hide success message after 4s
+      } else {
+        console.error("Validation failed or server error:", responseText);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900 overflow-hidden pb-20 md:pb-0">
       
@@ -30,12 +68,12 @@ export default function SupportPage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#contact-form">
-              <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105">
+              <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-white text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105 cursor-pointer">
                 Contact Support
               </Button>
             </a>
             <a href="#callback">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm">
+              <Button size="lg" className="w-full sm:w-auto border-2 border-white/20 bg-transparent text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm cursor-pointer">
                 Talk To An Expert
               </Button>
             </a>
@@ -69,33 +107,30 @@ export default function SupportPage() {
 
               <div className="space-y-6">
                 <ContactInfoBox 
-                  title="Program Support" 
-                  email="support@savvyintern.com" 
-                  phone="+91 9876543210" 
+                  title="General Support" 
+                  email="Support@savvyintern.com" 
+                />
+                <ContactInfoBox 
+                  title="HR & Recruitment" 
+                  email="Hr@savvyintern.com" 
                 />
                 <ContactInfoBox 
                   title="Business & Partnerships" 
-                  email="partnerships@savvyintern.com" 
-                  phone="+91 9876543211" 
-                />
-                <ContactInfoBox 
-                  title="Careers & Recruitment" 
-                  email="careers@savvyintern.com" 
-                  phone="+91 9876543212" 
+                  email="Support@savvyintern.com" 
                 />
               </div>
 
-              {/* Callback Request Card (Premium Suggestion) */}
+              {/* Callback Request Card */}
               <div id="callback" className="bg-gradient-to-br from-[#0B3B7A] to-blue-800 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden mt-8">
                 <div className="absolute -right-6 -top-6 text-white/10">
                   <PhoneCall className="w-32 h-32" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2 relative z-10">Request A Callback</h3>
                 <p className="text-blue-100 text-sm mb-6 relative z-10">Leave your number and an expert will call you back shortly.</p>
-                <form className="space-y-4 relative z-10">
-                  <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]" />
-                  <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]" />
-                  <Button className="w-full bg-[#38BDF8] hover:bg-white text-[#0B3B7A] font-bold rounded-xl py-3 transition-colors">
+                <form className="space-y-4 relative z-10" onSubmit={(e) => e.preventDefault()}>
+                  <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]" required />
+                  <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]" required />
+                  <Button type="submit" className="w-full bg-[#38BDF8] hover:bg-white text-[#0B3B7A] font-bold rounded-xl py-3 h-12 transition-colors cursor-pointer shadow-md">
                     Call Me Back
                   </Button>
                 </form>
@@ -114,26 +149,29 @@ export default function SupportPage() {
                 </div>
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {/* SECRET INPUT FOR THE API */}
+                <input type="hidden" name="formType" value="contact" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Full Name *</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="John Doe" required />
+                    <input type="text" name="name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="John Doe" required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Email Address *</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="john@example.com" required />
+                    <input type="email" name="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="john@example.com" required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Mobile Number *</label>
-                    <input type="tel" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="+91 XXX XXX XXXX" required />
+                    <input type="tel" name="phone" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="+91 XXX XXX XXXX" required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Area Of Interest</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white text-gray-600">
+                    <select name="interest" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white text-gray-600">
                       <option>Internship Programs</option>
                       <option>Corporate Training</option>
                       <option>Career Counseling</option>
@@ -145,16 +183,26 @@ export default function SupportPage() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Subject</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="How can we help you?" />
+                  <input type="text" name="subject" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="How can we help you?" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Message *</label>
-                  <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white resize-none" placeholder="Write your message here..." required></textarea>
+                  <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#38BDF8] focus:ring-2 focus:ring-[#38BDF8]/20 outline-none transition-all bg-gray-50 focus:bg-white resize-none" placeholder="Write your message here..." required></textarea>
                 </div>
 
-                <Button className="w-full bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white rounded-xl h-14 font-bold text-lg shadow-md transition-transform hover:scale-[1.01]">
-                  Submit Request
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting || isSuccess}
+                  className="w-full bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white rounded-xl h-14 font-bold text-lg shadow-md transition-all cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
+                >
+                  {isSubmitting ? (
+                    <><Loader2 className="w-6 h-6 mr-2 animate-spin" /> Sending...</>
+                  ) : isSuccess ? (
+                    <><CheckCircle2 className="w-6 h-6 mr-2" /> Message Sent!</>
+                  ) : (
+                    "Submit Request"
+                  )}
                 </Button>
               </form>
             </div>
@@ -192,15 +240,17 @@ export default function SupportPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[#0B3B7A] mb-3">Corporate Office</h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
+                  <p className="text-gray-600 leading-relaxed mb-4 font-medium">
                     SAVVY INTERN HQ<br />
-                    123 Innovation Drive, Tech Park<br />
-                    Hyderabad, Telangana - 500001<br />
+                    Jeevan Bima Nagar<br />
+                    Bangalore, Karnataka - 560075<br />
                     India
                   </p>
-                  <Button variant="outline" className="rounded-full border-gray-200 text-[#0B3B7A] hover:bg-[#38BDF8]/10 hover:text-[#38BDF8] hover:border-[#38BDF8]/30">
-                    Get Directions
-                  </Button>
+                  <a href="https://maps.google.com/?q=Jeevan+Bima+Nagar+Bangalore" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-white border-2 border-[#0B3B7A] text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white rounded-full font-bold transition-colors cursor-pointer shadow-sm">
+                      Get Directions
+                    </Button>
+                  </a>
                 </div>
               </div>
 
@@ -221,9 +271,8 @@ export default function SupportPage() {
 
             {/* Map Embed */}
             <div className="bg-gray-200 rounded-3xl overflow-hidden shadow-inner h-[450px] relative">
-              {/* Fallback Map Image or Iframe */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12182.305206344915!2d78.474628!3d17.385044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                src="https://maps.google.com/maps?q=Jeevan%20Bima%20Nagar,%20Bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -273,14 +322,6 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* WhatsApp Floating Button (Premium Suggestion) */}
-      <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center group">
-        <MessageCircle className="w-8 h-8" />
-        <span className="absolute right-16 bg-white text-gray-800 text-sm font-bold py-2 px-4 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-          Chat With Us
-        </span>
-      </a>
-
     </main>
   );
 }
@@ -299,7 +340,7 @@ function SupportCard({ icon: Icon, title, desc }: any) {
   );
 }
 
-function ContactInfoBox({ title, email, phone }: any) {
+function ContactInfoBox({ title, email }: any) {
   return (
     <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
       <div className="bg-[#0B3B7A]/5 p-3 rounded-full mt-1">
@@ -307,8 +348,7 @@ function ContactInfoBox({ title, email, phone }: any) {
       </div>
       <div>
         <h4 className="font-extrabold text-gray-900 text-lg mb-1">{title}</h4>
-        <p className="text-[#38BDF8] font-semibold mb-1 hover:underline cursor-pointer">{email}</p>
-        <p className="text-gray-500 font-medium">{phone}</p>
+        <a href={`mailto:${email}`} className="text-[#38BDF8] font-semibold mb-1 hover:underline cursor-pointer block">{email}</a>
       </div>
     </div>
   );
@@ -321,7 +361,7 @@ function FaqItem({ question, answer }: { question: string, answer: string }) {
     <div className="border border-gray-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-[#38BDF8]/50 shadow-sm">
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+        className="w-full flex justify-between items-center p-6 text-left focus:outline-none cursor-pointer"
       >
         <span className="font-bold text-gray-900 pr-4">{question}</span>
         <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 text-[#38BDF8]' : ''}`} />
