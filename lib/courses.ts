@@ -2,11 +2,11 @@ export const courses = [
   {
     id: "machine-learning-with-python",
     title: "Machine Learning with Python",
-    instructor: "SAVVY Mentors",
+    instructor: "Krishna Kanth",
     lectures: 25,
     weeks: 7,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=600",
+    image: "/data-science.jpg",
     level: "Intermediate",
     students: "8,240",
     description: "Master Machine Learning concepts and build predictive models using Python. This hands-on internship covers supervised and unsupervised learning, neural networks, and real-world deployment."
@@ -14,11 +14,11 @@ export const courses = [
   {
     id: "artificial-intelligence",
     title: "Artificial Intelligence",
-    instructor: "SAVVY Mentors",
+    instructor: "Kranthi",
     lectures: 25,
     weeks: 9,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600",
+    image: "/ai-course.jpg",
     level: "Advanced",
     students: "5,120",
     description: "Dive deep into AI. Learn how to build intelligent agents, understand natural language processing, and explore the foundations of modern AI technologies."
@@ -26,11 +26,11 @@ export const courses = [
   {
     id: "data-science",
     title: "Data Science",
-    instructor: "SAVVY Mentors",
+    instructor: "Krishna Kanth",
     lectures: 26,
     weeks: 7,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600",
+    image: "/data-science.jpg",
     level: "Beginner to Intermediate",
     students: "10,400",
     description: "Learn to extract actionable insights from raw data. Covering Python, Pandas, statistical analysis, and data visualization techniques used by top tech companies."
@@ -38,11 +38,11 @@ export const courses = [
   {
     id: "web-development",
     title: "Web Development",
-    instructor: "SAVVY Mentors",
+    instructor: "Bhavani Shankar",
     lectures: 25,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=600",
+    image: "/card-web.jpg",
     level: "Beginner",
     students: "12,800",
     description: "Build modern, responsive websites from scratch using HTML, CSS, JavaScript, and Bootstrap. A perfect starting point for aspiring frontend developers."
@@ -50,11 +50,11 @@ export const courses = [
   {
     id: "cloud-computing",
     title: "Cloud Computing",
-    instructor: "SAVVY Mentors",
+    instructor: "Suresh",
     lectures: 24,
     weeks: 9,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600",
+    image: "/cloud.jpg",
     level: "Intermediate",
     students: "6,300",
     description: "Understand cloud architecture and deployment models. Get hands-on experience with core cloud services, scalability, and infrastructure management."
@@ -62,11 +62,11 @@ export const courses = [
   {
     id: "ethical-hacking",
     title: "Ethical Hacking",
-    instructor: "SAVVY Mentors",
+    instructor: "Suresh",
     lectures: 25,
     weeks: 9,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600",
+    image: "/hacking.jpg",
     level: "Intermediate",
     students: "9,150",
     description: "Learn to identify vulnerabilities and secure networks. Explore penetration testing methodologies, cryptography, and defense strategies against cyber threats."
@@ -74,11 +74,11 @@ export const courses = [
   {
     id: "java-programming",
     title: "Java",
-    instructor: "SAVVY Mentors",
+    instructor: "Bhavani Shankar",
     lectures: 25,
     weeks: 7,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600",
+    image: "/full-stack.jpg",
     level: "Beginner",
     students: "15,200",
     description: "Master Object-Oriented Programming with Java. Learn core concepts, data structures, and how to build robust backend applications."
@@ -86,11 +86,11 @@ export const courses = [
   {
     id: "react-js",
     title: "React",
-    instructor: "SAVVY Mentors",
+    instructor: "Bhavani Shankar",
     lectures: 25,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=600",
+    image: "/card-web.jpg",
     level: "Intermediate",
     students: "11,500",
     description: "Build interactive UI components with React.js. Learn state management, hooks, routing, and modern frontend development workflows."
@@ -98,11 +98,11 @@ export const courses = [
   {
     id: "full-stack-development",
     title: "Full Stack (React, Django, MySQL)",
-    instructor: "SAVVY Mentors",
+    instructor: "Kranthi",
     lectures: 25,
     weeks: 8,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=600",
+    image: "/full-stack.jpg",
     level: "Advanced",
     students: "7,800",
     description: "Become a complete developer. Build scalable backends with Django, dynamic frontends with React, and manage databases using MySQL."
@@ -110,11 +110,11 @@ export const courses = [
   {
     id: "internet-of-things",
     title: "Internet of Things",
-    instructor: "SAVVY Mentors",
+    instructor: "Suresh",
     lectures: 28,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600",
+    image: "/iot.jpg",
     level: "Intermediate",
     students: "4,200",
     description: "Connect the physical world to the digital. Learn embedded systems programming, sensor integration, and IoT cloud platforms."
@@ -122,11 +122,11 @@ export const courses = [
   {
     id: "embedded-systems",
     title: "Embedded Systems",
-    instructor: "SAVVY Mentors",
+    instructor: "Suresh",
     lectures: 26,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=600",
+    image: "/iot.jpg",
     level: "Advanced",
     students: "3,800",
     description: "Dive into microcontroller programming. Learn C/C++ for embedded devices, RTOS concepts, and hardware-software interfacing."
@@ -134,11 +134,11 @@ export const courses = [
   {
     id: "hybrid-electric-vehicles",
     title: "Hybrid and Electric Vehicles",
-    instructor: "SAVVY Mentors",
+    instructor: "Kranthi",
     lectures: 25,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=600",
+    image: "/ev.jpg",
     level: "Intermediate",
     students: "5,500",
     description: "Explore the future of automotive engineering. Understand battery management systems, power electronics, and EV drivetrain architecture."
@@ -146,11 +146,11 @@ export const courses = [
   {
     id: "robotics",
     title: "Robotics",
-    instructor: "SAVVY Mentors",
+    instructor: "Kranthi",
     lectures: 25,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600",
+    image: "/iot.jpg",
     level: "Intermediate",
     students: "4,900",
     description: "Build and program autonomous robots. Learn kinematics, sensor fusion, and control algorithms used in modern robotics."
@@ -158,11 +158,11 @@ export const courses = [
   {
     id: "autocad",
     title: "AutoCAD",
-    instructor: "SAVVY Mentors",
+    instructor: "Bhavani Shankar",
     lectures: 25,
     weeks: 8,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=600",
+    image: "/autocad.jpg",
     level: "Beginner to Intermediate",
     students: "6,100",
     description: "Master computer-aided design. Learn 2D drafting, 3D modeling, and create professional engineering drawings and architectural layouts."
@@ -170,11 +170,11 @@ export const courses = [
   {
     id: "construction-planning",
     title: "Construction Planning Management",
-    instructor: "SAVVY Mentors",
+    instructor: "Bhavani Shankar",
     lectures: 25,
     weeks: 9,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600",
+    image: "/construction.jpg",
     level: "Intermediate",
     students: "3,200",
     description: "Learn essential project management skills for the construction industry, including scheduling, cost estimation, and resource allocation."
@@ -182,11 +182,11 @@ export const courses = [
   {
     id: "finance",
     title: "Finance",
-    instructor: "SAVVY Mentors",
+    instructor: "Sumith D",
     lectures: 24,
     weeks: 9,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=600",
+    image: "/finance.jpg",
     level: "Beginner",
     students: "8,900",
     description: "Understand corporate finance, financial modeling, and investment analysis to make data-driven business decisions."
@@ -194,11 +194,11 @@ export const courses = [
   {
     id: "human-resources",
     title: "Human Resources ( HR )",
-    instructor: "SAVVY Mentors",
+    instructor: "Sumith D",
     lectures: 26,
     weeks: 13,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=600",
+    image: "/hr.jpg",
     level: "Beginner to Intermediate",
     students: "7,400",
     description: "Master modern HR practices, including talent acquisition, employee relations, organizational behavior, and performance management."
@@ -206,11 +206,11 @@ export const courses = [
   {
     id: "digital-marketing",
     title: "Digital Marketing",
-    instructor: "SAVVY Mentors",
+    instructor: "Sumith D",
     lectures: 25,
     weeks: 10,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=600",
+    image: "/card-marketing.jpg",
     level: "Beginner",
     students: "13,100",
     description: "Learn SEO, social media marketing, content strategy, and PPC advertising to drive growth and build brand awareness online."
@@ -218,11 +218,11 @@ export const courses = [
   {
     id: "stock-marketing",
     title: "Stock Marketing",
-    instructor: "SAVVY Mentors",
+    instructor: "Sumith D",
     lectures: 25,
     weeks: 12,
     price: 5000,
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=600",
+    image: "/finance.jpg",
     level: "Intermediate",
     students: "7,901",
     description: "Our Stock Market with Python internship offers an exciting opportunity to gain hands-on experience in the world of stock trading and financial markets, while learning how to use Python for data analysis and algorithmic trading."

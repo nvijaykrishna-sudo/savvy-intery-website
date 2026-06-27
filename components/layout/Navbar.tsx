@@ -32,7 +32,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <img 
             src="/SAAVY.png" 
-            alt="Savvy Intery Logo" 
+            alt="Savvy Intern Logo" 
             className="w-14 md:w-16 h-auto object-contain"
           />
         </Link>

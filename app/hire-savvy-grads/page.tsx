@@ -16,6 +16,11 @@ import {
 
 export default function HireSavvyGradsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  
+  // Form States
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const faqs = [
     {
@@ -54,7 +59,7 @@ export default function HireSavvyGradsPage() {
         
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center rounded-full border border-[#38BDF8]/30 bg-[#38BDF8]/10 px-4 py-1.5 text-sm font-bold text-[#38BDF8] mb-6 shadow-sm tracking-widest uppercase">
-            The Savvy Intery Talent Network
+            The Savvy Intern Talent Network
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6 break-words">
             Hire <span className="text-[#38BDF8]">Savvy Grads</span> For Your Team
@@ -64,12 +69,12 @@ export default function HireSavvyGradsPage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#hiring-form">
-              <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105">
+              <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105 cursor-pointer">
                 Hire Talent
               </Button>
             </a>
             <a href="#hiring-form">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm cursor-pointer">
                 Talk To Our Team
               </Button>
             </a>
@@ -93,22 +98,8 @@ export default function HireSavvyGradsPage() {
         </div>
       </section>
 
-      {/* 3. COMPANY LOGOS (Trusted By) */}
-      <section className="py-16 bg-white border-b border-gray-50 w-full overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-8">Trusted By Growing Businesses</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            <h2 className="text-2xl font-black text-gray-800">TechCorp</h2>
-            <h2 className="text-2xl font-black text-gray-800">Innovate.io</h2>
-            <h2 className="text-2xl font-black text-gray-800">GlobalStart</h2>
-            <h2 className="text-2xl font-black text-gray-800">NexusData</h2>
-            <h2 className="text-2xl font-black text-gray-800">CloudSync</h2>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. WHY HIRE THROUGH US */}
-      <section className="py-24 bg-gray-50 w-full">
+      {/* 3. WHY HIRE THROUGH US */}
+      <section className="py-24 bg-gray-50 w-full mt-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3B7A] mb-4">Why Hire Savvy Grads?</h2>
@@ -138,7 +129,7 @@ export default function HireSavvyGradsPage() {
         </div>
       </section>
 
-      {/* 5. TALENT CATEGORIES */}
+      {/* 4. TALENT CATEGORIES */}
       <section className="py-24 bg-white w-full">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3B7A] mb-16 text-center">Talent Categories Available</h2>
@@ -164,7 +155,7 @@ export default function HireSavvyGradsPage() {
         </div>
       </section>
 
-      {/* 6. PORTFOLIO & SUCCESS STORIES */}
+      {/* 5. PORTFOLIO & SUCCESS STORIES */}
       <section className="py-24 bg-[#0B3B7A] text-white w-full relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#38BDF8]/10 rounded-full blur-3xl"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -200,7 +191,7 @@ export default function HireSavvyGradsPage() {
         </div>
       </section>
 
-      {/* 7. RECRUITMENT PROCESS (4 Steps) */}
+      {/* 6. RECRUITMENT PROCESS (4 Steps) */}
       <section className="py-24 bg-gray-50 w-full">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
@@ -218,7 +209,7 @@ export default function HireSavvyGradsPage() {
         </div>
       </section>
 
-      {/* 8. HIRE TALENT FORM & FAQ */}
+      {/* 7. HIRE TALENT FORM & FAQ */}
       <section className="py-24 bg-white w-full" id="hiring-form">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -232,43 +223,97 @@ export default function HireSavvyGradsPage() {
                 <p className="text-blue-100 font-medium">Submit your requirements and we'll match you with the perfect Savvy Grad.</p>
               </div>
 
-              <form className="p-8 md:p-10 space-y-6">
+              {/* SECURE API FORM INTEGRATION */}
+              <form className="p-8 md:p-10 space-y-6" onSubmit={async (e) => {
+                e.preventDefault();
+                const formElement = e.currentTarget;
+                setIsSubmitting(true);
+                setFormError(null);
+                setIsSuccess(false);
+
+                try {
+                  const formData = new FormData(formElement);
+                  
+                  // Consolidate extra UI fields into the message to pass Zod schema cleanly
+                  const designation = formData.get("designation") || "N/A";
+                  const website = formData.get("website") || "N/A";
+                  const skills = formData.get("skills") || "N/A";
+                  const openings = formData.get("openings") || "N/A";
+                  const workMode = formData.get("workMode") || "N/A";
+                  const additionalReq = formData.get("requirements") || "None";
+                  
+                  const combinedMessage = `Designation: ${designation}\nWebsite: ${website}\nRequired Skills: ${skills}\nOpenings: ${openings}\nWork Mode: ${workMode}\nAdditional Notes: ${additionalReq}`;
+
+                  const payload = {
+                    formType: "hire",
+                    company: formData.get("company"),
+                    name: formData.get("contactName"),
+                    email: formData.get("email"),
+                    phone: formData.get("phone"),
+                    role: formData.get("role"),
+                    industry: formData.get("industry") || "Unspecified",
+                    message: combinedMessage,
+                    sourceForm: "Hire Talent Page"
+                  };
+
+                  const response = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                  });
+
+                  if (response.ok) {
+                    setIsSuccess(true);
+                    formElement.reset();
+                    setTimeout(() => setIsSuccess(false), 8000);
+                  } else {
+                    const errorText = await response.text();
+                    console.error("Backend validation failed:", errorText);
+                    setFormError("Server error: Data validation failed. Please check your inputs.");
+                  }
+                } catch (error) {
+                  console.error("Network Fetch error:", error);
+                  setFormError("Network error. Please check your internet connection and try again.");
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField label="Company Name *" placeholder="e.g. Acme Corp" />
-                  <InputField label="Hiring Contact Name *" placeholder="John Doe" />
+                  <InputField label="Company Name *" name="company" placeholder="e.g. Acme Corp" required disabled={isSubmitting} />
+                  <InputField label="Hiring Contact Name *" name="contactName" placeholder="John Doe" required disabled={isSubmitting} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField label="Official Email Address *" placeholder="john@acmecorp.com" type="email" />
-                  <InputField label="Mobile Number *" placeholder="+91 98765 43210" type="tel" />
+                  <InputField label="Official Email Address *" name="email" placeholder="john@acmecorp.com" type="email" required disabled={isSubmitting} />
+                  <InputField label="Mobile Number *" name="phone" placeholder="+91 98765 43210" type="tel" required disabled={isSubmitting} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField label="Designation" placeholder="e.g. HR Manager" />
-                  <InputField label="Company Website" placeholder="https://www.acmecorp.com" />
+                  <InputField label="Designation" name="designation" placeholder="e.g. HR Manager" disabled={isSubmitting} />
+                  <InputField label="Company Website" name="website" placeholder="https://www.acmecorp.com" disabled={isSubmitting} />
                 </div>
                 
                 <div className="border-t border-gray-100 pt-6 mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <InputField label="Industry" placeholder="e.g. FinTech, SaaS" />
-                    <InputField label="Job / Internship Role *" placeholder="e.g. Frontend Developer" />
+                    <InputField label="Industry" name="industry" placeholder="e.g. FinTech, SaaS" disabled={isSubmitting} />
+                    <InputField label="Job / Internship Role *" name="role" placeholder="e.g. Frontend Developer" required disabled={isSubmitting} />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <InputField label="Required Skills *" placeholder="e.g. React, Node.js" />
-                    <InputField label="Number Of Openings" placeholder="e.g. 3" type="number" />
+                    <InputField label="Required Skills *" name="skills" placeholder="e.g. React, Node.js" required disabled={isSubmitting} />
+                    <InputField label="Number Of Openings" name="openings" placeholder="e.g. 3" type="number" disabled={isSubmitting} />
                   </div>
                   
                   <div className="space-y-3 mb-6">
                     <Label className="font-bold text-gray-800 text-sm">Work Mode *</Label>
                     <div className="flex flex-wrap gap-4">
-                      <label className="flex items-center space-x-2 cursor-pointer bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg hover:border-[#38BDF8] transition-all">
-                        <input type="radio" name="workMode" value="Remote" className="accent-[#0B3B7A]" />
+                      <label className={`flex items-center space-x-2 cursor-pointer bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg hover:border-[#38BDF8] transition-all ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}>
+                        <input type="radio" name="workMode" value="Remote" className="accent-[#0B3B7A]" disabled={isSubmitting} defaultChecked />
                         <span className="text-sm font-medium text-gray-700">Remote</span>
                       </label>
-                      <label className="flex items-center space-x-2 cursor-pointer bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg hover:border-[#38BDF8] transition-all">
-                        <input type="radio" name="workMode" value="Hybrid" className="accent-[#0B3B7A]" />
+                      <label className={`flex items-center space-x-2 cursor-pointer bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg hover:border-[#38BDF8] transition-all ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}>
+                        <input type="radio" name="workMode" value="Hybrid" className="accent-[#0B3B7A]" disabled={isSubmitting} />
                         <span className="text-sm font-medium text-gray-700">Hybrid</span>
                       </label>
-                      <label className="flex items-center space-x-2 cursor-pointer bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg hover:border-[#38BDF8] transition-all">
-                        <input type="radio" name="workMode" value="Onsite" className="accent-[#0B3B7A]" />
+                      <label className={`flex items-center space-x-2 cursor-pointer bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg hover:border-[#38BDF8] transition-all ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}>
+                        <input type="radio" name="workMode" value="Onsite" className="accent-[#0B3B7A]" disabled={isSubmitting} />
                         <span className="text-sm font-medium text-gray-700">Onsite</span>
                       </label>
                     </div>
@@ -276,13 +321,25 @@ export default function HireSavvyGradsPage() {
 
                   <div className="space-y-2 mb-8">
                     <Label className="font-bold text-gray-800 text-sm">Additional Requirements</Label>
-                    <Textarea placeholder="Any specific requirements, shift timings, or stipend details..." className="min-h-[100px] border-gray-200 rounded-xl focus-visible:ring-[#0B3B7A] resize-none" />
+                    <Textarea name="requirements" placeholder="Any specific requirements, shift timings, or stipend details..." disabled={isSubmitting} className="min-h-[100px] border-2 border-gray-200 bg-white rounded-xl focus-visible:ring-[#38BDF8] resize-none disabled:opacity-50" />
                   </div>
                 </div>
 
-                <Button className="w-full h-14 bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white font-extrabold rounded-xl shadow-lg transition-all text-lg">
-                  Submit Hiring Request
+                {formError && (
+                   <div className="p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl text-sm font-bold mb-4">
+                     {formError}
+                   </div>
+                )}
+
+                <Button type="submit" disabled={isSubmitting} className="w-full h-14 bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white font-extrabold rounded-xl shadow-lg transition-all text-lg cursor-pointer disabled:opacity-70">
+                  {isSubmitting ? "Submitting Request..." : "Submit Hiring Request"}
                 </Button>
+
+                {isSuccess && (
+                  <div className="p-4 mt-6 bg-green-50 border border-green-200 text-green-700 rounded-xl text-center font-bold animate-in fade-in zoom-in duration-300">
+                    Success! Your hiring request has been received. Our team will contact you shortly.
+                  </div>
+                )}
               </form>
             </div>
 
@@ -295,7 +352,7 @@ export default function HireSavvyGradsPage() {
                     <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                       <button 
                         onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                        className="w-full px-5 py-4 flex items-center justify-between text-left transition-colors"
+                        className="w-full px-5 py-4 flex items-center justify-between text-left transition-colors cursor-pointer"
                       >
                         <h4 className="font-bold text-gray-900 text-sm pr-4">{faq.question}</h4>
                         {openFaq === index ? (
@@ -334,16 +391,16 @@ export default function HireSavvyGradsPage() {
         </div>
       </section>
 
-      {/* 9. FINAL CTA */}
+      {/* 8. FINAL CTA */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/50 w-full border-t border-gray-100">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3B7A] mb-6">Partner With Savvy Intery</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3B7A] mb-6">Partner With Savvy Intern</h2>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
             Build your team with skilled, motivated, and internship-ready talent. Let's help you find the right candidates faster and more efficiently.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#hiring-form">
-              <Button size="lg" className="w-full sm:w-auto bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white rounded-full h-14 px-10 font-bold shadow-lg transition-transform hover:scale-105">
+              <Button size="lg" className="w-full sm:w-auto bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white rounded-full h-14 px-10 font-bold shadow-lg transition-transform hover:scale-105 cursor-pointer">
                 Hire Savvy Grads
               </Button>
             </a>
@@ -353,11 +410,11 @@ export default function HireSavvyGradsPage() {
 
       {/* FLOATING ACTION BUTTON */}
       <a href="#hiring-form" className="fixed bottom-6 right-6 z-50 md:hidden">
-        <div className="bg-[#38BDF8] text-[#0B3B7A] p-4 rounded-full shadow-2xl flex items-center justify-center border-2 border-white animate-bounce">
+        <div className="bg-[#38BDF8] text-[#0B3B7A] p-4 rounded-full shadow-2xl flex items-center justify-center border-2 border-white animate-bounce cursor-pointer">
           <MessageSquare className="w-6 h-6" />
         </div>
       </a>
-      <a href="#hiring-form" className="fixed bottom-8 right-8 z-50 hidden md:flex items-center gap-2 bg-[#38BDF8] text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white transition-colors px-6 py-3 rounded-full shadow-2xl font-bold border-2 border-white">
+      <a href="#hiring-form" className="fixed bottom-8 right-8 z-50 hidden md:flex items-center gap-2 bg-[#38BDF8] text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white transition-colors px-6 py-3 rounded-full shadow-2xl font-bold border-2 border-white cursor-pointer">
         Request Talent <ChevronRight className="w-4 h-4" />
       </a>
 
@@ -438,11 +495,12 @@ function ProcessStep({ number, title, desc }: any) {
   );
 }
 
-function InputField({ label, placeholder, type = "text" }: { label: string, placeholder: string, type?: string }) {
+// Updated InputField Helper to accept name, disabled, and required properties
+function InputField({ label, name, placeholder, type = "text", disabled = false, required = false }: { label: string, name: string, placeholder: string, type?: string, disabled?: boolean, required?: boolean }) {
   return (
     <div className="space-y-2">
       <Label className="font-bold text-gray-800 text-sm">{label}</Label>
-      <Input type={type} placeholder={placeholder} className="h-12 border-gray-200 rounded-xl focus-visible:ring-[#0B3B7A] bg-gray-50/50 hover:bg-gray-50 transition-colors" />
+      <Input name={name} type={type} required={required} disabled={disabled} placeholder={placeholder} className="h-12 border-2 border-gray-200 bg-white rounded-xl focus-visible:ring-[#38BDF8] transition-colors disabled:opacity-50 text-gray-900" />
     </div>
   );
 }

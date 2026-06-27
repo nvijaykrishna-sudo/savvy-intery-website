@@ -20,20 +20,20 @@ export const leadFormSchema = z.object({
   email: emailSchema,
   phone: phoneSchema,
   message: messageSchema.optional(),
+  sourceForm: z.string().optional(), // Added so your webhook actually receives this data!
 })
 
 // Course application form
 export const courseApplicationSchema = leadFormSchema.extend({
   formType: z.literal('course-apply'),
-  courseId: z.string(),
-  courseName: z.string(),
+  courseOfInterest: z.string().min(1, 'Course is required'), // Standardized field name
 })
 
 // Career application form
 export const careerApplicationSchema = leadFormSchema.extend({
   formType: z.literal('career-apply'),
-  internshipId: z.string(),
-  internshipTitle: z.string(),
+  internshipId: z.string().optional(),
+  internshipTitle: z.string().optional(),
   resume: z.string().optional(),
 })
 
@@ -42,7 +42,7 @@ export const hireFormSchema = leadFormSchema.extend({
   formType: z.literal('hire'),
   company: z.string().min(2, 'Company name required'),
   role: z.string().min(2, 'Role required'),
-  industry: z.string(),
+  industry: z.string().optional(),
 })
 
 // Callback request form
@@ -59,7 +59,7 @@ export const contactFormSchema = leadFormSchema.extend({
 // Program inquiry form
 export const programInquirySchema = leadFormSchema.extend({
   formType: z.literal('program-inquiry'),
-  programName: z.string().optional(),
+  courseOfInterest: z.string().optional(), // Standardized field name
 })
 
 // Union type for all forms

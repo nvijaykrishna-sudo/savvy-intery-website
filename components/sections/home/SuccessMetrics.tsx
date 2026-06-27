@@ -92,7 +92,7 @@ export function SuccessMetrics() {
             Our Track Record of Success
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Join thousands of students who have transformed their careers with SAVVY INTERY
+            Join thousands of students who have transformed their careers with SAVVY INTERN
           </motion.p>
         </motion.div>
 

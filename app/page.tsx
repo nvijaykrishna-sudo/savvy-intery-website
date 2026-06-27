@@ -1,6 +1,5 @@
-"use client"; // REQUIRED for form state handling in Section 4
+"use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,15 +23,6 @@ import {
 import { HeroAnimation } from "@/components/animations/HeroAnimation";
 
 export default function HomePage() {
-  // Form State for Section 4: Talk to Expert
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    mobile: "",
-    areaOfInterest: "",
-    qualification: "",
-  });
-
   return (
     <main className="flex min-h-screen flex-col bg-white text-gray-900">
       
@@ -44,7 +34,6 @@ export default function HomePage() {
             {/* Left Side Content */}
             <div className="flex flex-col space-y-8 z-10">
               <div className="inline-flex items-center rounded-full border border-[#38BDF8]/30 bg-[#38BDF8]/10 px-3 py-1 text-sm font-medium text-[#0B3B7A] w-fit">
-                {/* OPTIMIZED: Removed animate-pulse */}
                 <span className="flex h-2 w-2 rounded-full bg-[#38BDF8] mr-2"></span>
                 Industry-Ready Programs
               </div>
@@ -69,16 +58,16 @@ export default function HomePage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href="/courses">
-                  <Button size="lg" className="bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white rounded-full h-12 px-8 font-semibold shadow-lg">
+                <Button asChild size="lg" className="bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white rounded-full h-12 px-8 font-semibold shadow-lg cursor-pointer">
+                  <Link href="/courses">
                     Explore Programs <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="#expert-form">
-                  <Button size="lg" variant="outline" className="rounded-full h-12 px-8 border-2 border-[#0B3B7A] bg-transparent text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white font-semibold transition-all">
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-full h-12 px-8 border-2 border-[#0B3B7A] bg-transparent text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white font-semibold transition-all cursor-pointer">
+                  <Link href="#expert-form">
                     Talk To An Expert
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
 
@@ -130,7 +119,6 @@ export default function HomePage() {
 
       {/* 3. DISCOUNT OFFER SECTION */}
       <section className="py-16 bg-gradient-to-r from-[#0B3B7A] to-blue-800 text-white relative overflow-hidden">
-        {/* OPTIMIZED: Changed to blur-3xl, removed mix-blend-multiply and animate-pulse */}
         <div className="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-[#38BDF8] rounded-full blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
@@ -144,16 +132,16 @@ export default function HomePage() {
             Take the leap today. Gain practical experience, connect with industry experts, and get certified. Your future self will thank you.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Link href="#expert-form">
-              <Button size="lg" className="bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] font-extrabold rounded-full h-14 px-10 text-md shadow-2xl transition-all hover:scale-105">
+            <Button asChild size="lg" className="bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] font-extrabold rounded-full h-14 px-10 text-md shadow-2xl transition-all hover:scale-105 cursor-pointer">
+              <Link href="#expert-form">
                 Claim Offer
-              </Button>
-            </Link>
-            <Link href="/courses">
-              <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white hover:text-[#0B3B7A] bg-transparent rounded-full h-14 px-10 font-bold transition-all">
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white hover:text-[#0B3B7A] bg-transparent rounded-full h-14 px-10 font-bold transition-all cursor-pointer">
+              <Link href="/courses">
                 View Programs
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -163,7 +151,6 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-3xl p-10 md:p-16 border border-gray-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.03)] relative overflow-hidden">
             
-            {/* OPTIMIZED: Changed to blur-3xl */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#0B3B7A]/5 rounded-full blur-3xl"></div>
             
             <div className="z-10 space-y-6">
@@ -177,18 +164,46 @@ export default function HomePage() {
             </div>
 
             <Card className="border-gray-100 shadow-xl bg-white/90 backdrop-blur-lg rounded-2xl p-8 z-10">
-                <form className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <InputField label="Full Name" placeholder="E.g. Sai Krishna" />
-                        <InputField label="Email Address" placeholder="sai@example.com" type="email" />
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <InputField label="Mobile Number" placeholder="+91 98765 43210" type="tel" />
-                        <InputField label="Area Of Interest" placeholder="E.g. Web Development" />
-                    </div>
-                    <InputField label="Current Qualification" placeholder="E.g. B.Tech Final Year" />
+                {/* 100% SECURE FORM FIX INTEGRATED HERE */}
+                <form className="space-y-5" onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+                  const data = Object.fromEntries(formData.entries());
+
+                  try {
+                    const response = await fetch('/api/lead', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(data),
+                    });
+
+                    if (response.ok) {
+                      alert("Inquiry submitted successfully!");
+                      form.reset();
+                    } else {
+                      const responseText = await response.text();
+                      console.error("Validation failed:", responseText);
+                      alert("Something went wrong. Please check your inputs.");
+                    }
+                  } catch (error) {
+                    console.error("Fetch error:", error);
+                    alert("Network error. Please try again.");
+                  }
+                }}>
+                    <input type="hidden" name="formType" value="program-inquiry" />
                     
-                    <Button className="w-full h-12 bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold rounded-lg text-md mt-6 shadow-md">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <InputField label="Full Name" name="name" placeholder="E.g. Sai Krishna" required={true} />
+                        <InputField label="Email Address" name="email" placeholder="sai@example.com" type="email" required={true} />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <InputField label="Mobile Number" name="phone" placeholder="+91 98765 43210" type="tel" required={true} />
+                        <InputField label="Area Of Interest" name="interest" placeholder="E.g. Web Development" />
+                    </div>
+                    <InputField label="Current Qualification" name="qualification" placeholder="E.g. B.Tech Final Year" />
+                    
+                    <Button type="submit" className="w-full h-12 bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold rounded-lg text-md mt-6 shadow-md cursor-pointer">
                         Submit Inquiry
                     </Button>
                 </form>
@@ -247,10 +262,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. WHY CHOOSE SAVVY INTERY */}
+      {/* 7. WHY CHOOSE SAVVY INTERN */}
       <section className="py-20 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B3B7A] mb-12">Why Choose Savvy Intery</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0B3B7A] mb-12">Why Choose Savvy Intern</h2>
           
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             <Badge text="Industry-Relevant Curriculum" />
@@ -300,21 +315,28 @@ function CourseCard({ title, price, icon: Icon, details, href }: any) {
         </ul>
       </CardContent>
         <div className="px-7 pb-7 mt-auto">
-            <Link href={href || "/courses"} className="w-full block">
-                <Button className="w-full h-12 bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold rounded-lg text-md transition-all group-hover:shadow-lg">
-                    View Details
-                </Button>
-            </Link>
+            <Button asChild className="w-full h-12 bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold rounded-lg text-md transition-all group-hover:shadow-lg cursor-pointer">
+              <Link href={href || "/courses"} className="w-full block">
+                View Details
+              </Link>
+            </Button>
         </div>
     </Card>
   );
 }
 
-function InputField({ label, placeholder, type = "text" }: any) {
+// 100% FIXED INPUT FIELD (Names added, CSS fixed to force dark text)
+function InputField({ label, placeholder, type = "text", name, required = false }: any) {
     return (
         <div className="space-y-2">
             <Label className="font-semibold text-gray-700 text-sm">{label}</Label>
-            <Input type={type} placeholder={placeholder} className="h-11 border-gray-200 rounded-lg focus-visible:ring-[#0B3B7A]" />
+            <Input 
+              type={type} 
+              name={name}
+              placeholder={placeholder} 
+              required={required}
+              className="h-11 border-gray-200 rounded-lg focus-visible:ring-[#0B3B7A] text-gray-900 bg-gray-50 placeholder:text-gray-400 hover:bg-gray-100 transition-colors" 
+            />
         </div>
     );
 }
@@ -322,7 +344,6 @@ function InputField({ label, placeholder, type = "text" }: any) {
 function ReviewCard({ name, review }: any) {
   return (
     <div className="p-8 md:p-10 rounded-3xl bg-white border border-gray-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] relative overflow-hidden group hover:border-[#38BDF8]/20 transition-colors">
-      {/* OPTIMIZED: Removed hover transition on the blur */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/5 rounded-full blur-2xl"></div>
       
       <div className="flex text-orange-500 gap-1 mb-6">

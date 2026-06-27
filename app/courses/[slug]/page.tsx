@@ -15,7 +15,9 @@ const courseDatabase: Record<string, any> = {
     title: "Artificial Intelligence",
     description: "Master AI Evolution, Machine Learning, NLP, and Deep Learning with Python.",
     duration: "10 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "1,200+",
-    image: "/ai-course.jpg", // Fixed Path
+    image: "/ai-course.jpg", 
+    instructorName: "Kranthi",
+    instructorDesc: "An industry expert with extensive experience in Artificial Intelligence and Machine Learning, focusing on hands-on deployment and real-world problem solving.",
     modules: [
       { title: "Introduction to AI and Python", topics: ["AI Evolution & Classification", "Python Basics & Visualization", "Key Python Concepts"] },
       { title: "Mathematical Foundations", topics: ["Linear Algebra - Part 1 & 2", "Dot Product", "Statistics - Part 1 & 2"] },
@@ -30,7 +32,9 @@ const courseDatabase: Record<string, any> = {
     title: "Machine Learning with Python",
     description: "Deep dive into OOP, Supervised/Unsupervised Learning, CNNs, and Deep Learning Frameworks.",
     duration: "10 Weeks", lessons: "90+ Lessons", level: "Advanced", students: "950+",
-    image: "/ml-course.jpg", // Fixed Path
+    image: "/data-science.jpg", 
+    instructorName: "Krishna Kanth",
+    instructorDesc: "An industry expert with extensive experience in Machine Learning and Python, focusing on predictive modeling and algorithm deployment.",
     modules: [
       { title: "Introduction to ML and Python", topics: ["Intro to ML & Python Basics", "Python Operators & Control Structures", "OOP & Functional Programming", "Python Modules & Packages"] },
       { title: "Data Analysis and Supervised Learning", topics: ["Exploratory Data Analysis", "Supervised Learning: Regression", "Classification: Logistic & k-NN", "SVM", "Decision Tree & Random Forest"] },
@@ -44,7 +48,9 @@ const courseDatabase: Record<string, any> = {
     title: "Data Analytics & Data Science",
     description: "Extract insights from raw data. Master Python, SQL, exploratory data analysis, and predictive modeling.",
     duration: "12 Weeks", lessons: "110+ Lessons", level: "Beginner to Advanced", students: "2,100+",
-    image: "/data-science.jpg", // Fixed Path
+    image: "/data-science.jpg", 
+    instructorName: "Krishna Kanth",
+    instructorDesc: "An industry expert with extensive experience in Data Science and Analytics, focusing on extracting actionable insights and real-world problem solving.",
     modules: [
       { title: "Data Analytics Foundations", topics: ["Introduction to Data Science & Analytics", "Excel for Data Analysis", "Advanced Excel Dashboards"] },
       { title: "Database Management", topics: ["SQL Basics & Syntax", "Advanced SQL Queries & Joins", "Database Design"] },
@@ -57,7 +63,9 @@ const courseDatabase: Record<string, any> = {
     title: "Web Development (HTML, CSS, JS, Bootstrap)",
     description: "Learn frontend and backend basics to build responsive, modern websites.",
     duration: "8 Weeks", lessons: "75+ Lessons", level: "Beginner", students: "3,400+",
-    image: "/web-dev.jpg", // Fixed Path
+    image: "/card-web.jpg", 
+    instructorName: "Bhavani Shankar",
+    instructorDesc: "An industry expert with extensive experience in Web Development, focusing on building responsive, robust, and modern web applications.",
     modules: [
       { title: "Web Development Basics", topics: ["Introduction to Web Development", "HTML Lists and Forms"] },
       { title: "CSS Fundamentals", topics: ["Introduction to CSS", "CSS Colors, Backgrounds, Borders", "Margins, Padding, and Box Model"] },
@@ -73,7 +81,9 @@ const courseDatabase: Record<string, any> = {
     title: "Full Stack (React, Django, MySQL)",
     description: "Master full-stack development by combining React for frontend and Django for backend.",
     duration: "14 Weeks", lessons: "140+ Lessons", level: "Advanced", students: "1,800+",
-    image: "/full-stack.jpg", // Fixed Path
+    image: "/full-stack.jpg", 
+    instructorName: "Kranthi",
+    instructorDesc: "An industry expert with extensive experience in Full Stack Development, focusing on combining modern frontends with robust backends.",
     modules: [
       { title: "Web Development Foundations", topics: ["Web Development Overview", "HTML Basics and Forms", "HTML Tables and Attributes"] },
       { title: "CSS and Responsive Design", topics: ["CSS Basics and Selectors", "Box Model and Media Queries"] },
@@ -89,7 +99,9 @@ const courseDatabase: Record<string, any> = {
     title: "React Mastery",
     description: "Master functional components, hooks, state management, and SSR with Next.js.",
     duration: "8 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "2,200+",
-    image: "/react.jpg", // Fixed Path
+    image: "/card-web.jpg", 
+    instructorName: "Bhavani Shankar",
+    instructorDesc: "An industry expert with extensive experience in React and modern frontend frameworks, focusing on scalable and performant UI development.",
     modules: [
       { title: "Introduction to React", topics: ["React Overview & Setup", "Functional vs Class Components & Lifecycle", "Styling: Inline, CSS Modules, Theming"] },
       { title: "Handling Forms and State", topics: ["Forms, Validation & Custom Hooks", "State Management: useState, useReducer, Redux"] },
@@ -104,7 +116,9 @@ const courseDatabase: Record<string, any> = {
     title: "Java Programming",
     description: "Learn core Java, OOP concepts, Multithreading, and Database connectivity.",
     duration: "10 Weeks", lessons: "100+ Lessons", level: "Beginner to Advanced", students: "1,600+",
-    image: "/java.jpg", // Fixed Path
+    image: "/full-stack.jpg", 
+    instructorName: "Bhavani Shankar",
+    instructorDesc: "An industry expert with extensive experience in Java programming, focusing on core concepts, OOP, and enterprise-level applications.",
     modules: [
       { title: "Java Fundamentals", topics: ["Java Intro and Setup", "Java Basics and Installation", "Operators, Type Casting, and Enums", "Control Flow in Java"] },
       { title: "Object-Oriented Programming", topics: ["Classes, Objects and Methods", "Constructors and Encapsulation", "this, super, Abstract Classes, Interfaces", "Adapter Classes and Polymorphism"] },
@@ -119,7 +133,9 @@ const courseDatabase: Record<string, any> = {
     title: "Cloud Computing & AWS",
     description: "Learn cloud infrastructure, EC2, AWS Lambda, VPC, and DevOps CI/CD pipelines.",
     duration: "10 Weeks", lessons: "95+ Lessons", level: "Intermediate", students: "1,400+",
-    image: "/cloud.jpg", // Fixed Path
+    image: "/cloud.jpg", 
+    instructorName: "Suresh",
+    instructorDesc: "An industry expert with extensive experience in Cloud Computing and AWS, focusing on scalable infrastructure and secure deployments.",
     modules: [
       { title: "Introduction to Cloud Computing", topics: ["Intro to Cloud Computing & Service Models", "Deployment Models & AWS Overview", "AWS Infrastructure & Account Setup"] },
       { title: "Compute Services", topics: ["Amazon EC2 & Compute Services", "Creating EC2 Instances & AMI", "AWS Lambda & Elastic Beanstalk"] },
@@ -134,7 +150,9 @@ const courseDatabase: Record<string, any> = {
     title: "Ethical Hacking & Cyber Security",
     description: "Master vulnerability assessment, cryptography, malware analysis, and network defense.",
     duration: "12 Weeks", lessons: "120+ Lessons", level: "Advanced", students: "2,500+",
-    image: "/hacking.jpg", // Fixed Path
+    image: "/hacking.jpg", 
+    instructorName: "Suresh",
+    instructorDesc: "An industry expert with extensive experience in Cyber Security and Ethical Hacking, focusing on network defense and vulnerability assessment.",
     modules: [
       { title: "Introduction to Ethical Hacking", topics: ["Ethical Hacking Overview", "Hacking Types", "Testing vs Assessment", "Hacking Tools and Nmap demo"] },
       { title: "Information Gathering and Social Engineering", topics: ["Information Gathering", "Social Engineering Basics", "Social Engineering Defense"] },
@@ -150,7 +168,9 @@ const courseDatabase: Record<string, any> = {
     title: "Internet of Things (IoT)",
     description: "Learn IoT architecture, edge computing, smart manufacturing, and IoT security.",
     duration: "10 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "800+",
-    image: "/iot.jpg", // Fixed Path
+    image: "/iot.jpg", 
+    instructorName: "Suresh",
+    instructorDesc: "An industry expert with extensive experience in IoT and embedded systems, focusing on smart devices and connected ecosystems.",
     modules: [
       { title: "IoT Basics and Evolution", topics: ["Introduction to IoT", "IoT Evolution and Importance", "IoT Applications", "IoT Challenges and Opportunities"] },
       { title: "IoT Networking and Connectivity", topics: ["Networking Basics in IoT", "IoT Connectivity Modules", "Short and Long-Range IoT Communication", "IoT Application Layer Protocols"] },
@@ -164,7 +184,9 @@ const courseDatabase: Record<string, any> = {
     title: "Embedded Systems",
     description: "Master microcontrollers, C/C++ programming, IoT sensors, and PCB design.",
     duration: "12 Weeks", lessons: "100+ Lessons", level: "Advanced", students: "900+",
-    image: "/embedded.jpg", // Fixed Path
+    image: "/iot.jpg", 
+    instructorName: "Suresh",
+    instructorDesc: "An industry expert with extensive experience in Embedded Systems, focusing on microcontrollers, hardware interfacing, and real-time systems.",
     modules: [
       { title: "Introduction to Embedded Systems", topics: ["Embedded Systems Overview", "Microcontrollers vs Microprocessors"] },
       { title: "Electronics and Circuit Design", topics: ["Digital and Analog Electronics Basics", "Circuit Design and Prototyping"] },
@@ -178,7 +200,9 @@ const courseDatabase: Record<string, any> = {
     title: "Hybrid and Electric Vehicles",
     description: "Learn EV motor tech, battery management systems (BMS), and vehicle dynamics.",
     duration: "10 Weeks", lessons: "90+ Lessons", level: "Intermediate", students: "1,100+",
-    image: "/ev.jpg", // Fixed Path
+    image: "/ev.jpg", 
+    instructorName: "Kranthi",
+    instructorDesc: "An industry expert with extensive experience in Hybrid and Electric Vehicles, focusing on sustainable transportation and automotive engineering.",
     modules: [
       { title: "Introduction to Electric and Hybrid Vehicles", topics: ["Vehicle Overview", "History of HEVs and EVs", "Environmental Impact & Sustainability", "Global Market Trends & Regulations"] },
       { title: "Automotive Engineering Foundations", topics: ["Basics of Automotive Engineering", "Vehicle Dynamics", "Engines vs. Electric Motors", "Transmission & Drivetrains", "Aerodynamics & Efficiency"] },
@@ -192,7 +216,9 @@ const courseDatabase: Record<string, any> = {
     title: "Robotics",
     description: "Master kinematics, ROS programming, computer vision, and machine learning in robotics.",
     duration: "12 Weeks", lessons: "115+ Lessons", level: "Advanced", students: "750+",
-    image: "/robotics.jpg", // Fixed Path
+    image: "/iot.jpg", 
+    instructorName: "Kranthi",
+    instructorDesc: "An industry expert with extensive experience in Robotics, focusing on kinematics, control systems, and automation.",
     modules: [
       { title: "Introduction to Robotics", topics: ["Introduction & History of Robotics", "Mechanical Components & Power Systems", "End Effectors & 3D Printing in Robotics"] },
       { title: "Kinematics and Control Systems", topics: ["Kinematics & Motion Control", "Degrees of Freedom & Dynamic Control", "Control & Trajectory Planning"] },
@@ -206,7 +232,9 @@ const courseDatabase: Record<string, any> = {
     title: "AutoCAD & Civil 3D",
     description: "Master 2D/3D drafting, corridor design, pipe networks, and surveying tools.",
     duration: "8 Weeks", lessons: "70+ Lessons", level: "Beginner to Intermediate", students: "1,850+",
-    image: "/autocad.jpg", // Fixed Path
+    image: "/autocad.jpg", 
+    instructorName: "Bhavani Shankar",
+    instructorDesc: "An industry expert with extensive experience in AutoCAD and Civil 3D, focusing on drafting, modeling, and civil engineering design.",
     modules: [
       { title: "Introduction to Civil 3D and Basic Tools", topics: ["Civil 3D Overview and Project Setup", "Basic Drawing Tools", "Editing Tools Overview"] },
       { title: "Surveying and Surface Modeling", topics: ["Surveying and Importing Data", "Managing Point Groups", "Surface Creation and Editing", "Surface Analysis Basics"] },
@@ -220,7 +248,9 @@ const courseDatabase: Record<string, any> = {
     title: "Construction Planning Management",
     description: "Learn CPM, PERT, BIM, contract management, and sustainable construction practices.",
     duration: "10 Weeks", lessons: "85+ Lessons", level: "Intermediate", students: "1,050+",
-    image: "/construction.jpg", // Fixed Path
+    image: "/construction.jpg", 
+    instructorName: "Bhavani Shankar",
+    instructorDesc: "An industry expert with extensive experience in Construction Management, focusing on project planning, scheduling, and risk management.",
     modules: [
       { title: "Introduction to Construction Management", topics: ["Construction Industry Overview", "Planning and Project Life Cycle", "Construction Standards in India"] },
       { title: "Project Planning and Scheduling", topics: ["Financial Planning and WBS", "Scheduling and Gantt Charts", "Critical Path Method (CPM)", "Floats, PERT and Resource Allocation"] },
@@ -234,7 +264,9 @@ const courseDatabase: Record<string, any> = {
     title: "Finance & Financial Modeling",
     description: "Master financial statements, derivatives, taxation, FinTech, and banking operations.",
     duration: "10 Weeks", lessons: "95+ Lessons", level: "Beginner to Advanced", students: "2,600+",
-    image: "/finance.jpg", // Fixed Path
+    image: "/finance.jpg", 
+    instructorName: "Sumith D",
+    instructorDesc: "An industry expert with extensive experience in Finance and Financial Modeling, focusing on corporate strategy, taxation, and investment management.",
     modules: [
       { title: "Finance Foundations", topics: ["Finance Overview and Functions", "Financial Statements and Ratio Analysis", "Capital Budgeting and M&A"] },
       { title: "Banking and Financial Markets", topics: ["Indian Banking System", "Stock Exchanges and Mutual Funds", "Derivatives and Risk Management"] },
@@ -248,7 +280,9 @@ const courseDatabase: Record<string, any> = {
     title: "Human Resources (HR)",
     description: "Learn talent acquisition, labor laws, performance management, and HR analytics.",
     duration: "8 Weeks", lessons: "75+ Lessons", level: "Beginner", students: "1,900+",
-    image: "/hr.jpg", // Fixed Path
+    image: "/hr.jpg", 
+    instructorName: "Sumith D",
+    instructorDesc: "An industry expert with extensive experience in Human Resources, focusing on talent acquisition, employee relations, and compliance.",
     modules: [
       { title: "Foundations of HRM", topics: ["Intro to HRM & Its Importance", "Evolution & Strategic HRM"] },
       { title: "Recruitment, Training & Performance", topics: ["Recruitment Strategies & Selection Process", "Training Needs & Program Design", "Employee Development & Career Planning", "Performance Management & Appraisal"] },
@@ -261,7 +295,9 @@ const courseDatabase: Record<string, any> = {
     title: "Digital Marketing",
     description: "Master SEO, SEM, content strategy, programmatic advertising, and marketing analytics.",
     duration: "8 Weeks", lessons: "80+ Lessons", level: "Beginner", students: "3,100+",
-    image: "/marketing.jpg", // Fixed Path
+    image: "/card-marketing.jpg", 
+    instructorName: "Sumith D",
+    instructorDesc: "An industry expert with extensive experience in Digital Marketing, focusing on SEO, social media strategies, and data-driven marketing.",
     modules: [
       { title: "Introduction to Digital Marketing", topics: ["Intro to Digital Marketing", "Digital vs. Traditional Marketing", "Website Creation and UX/UI", "SEO and Mobile Optimization"] },
       { title: "Content and Social Media Marketing", topics: ["Content Marketing Basics", "Video and Podcast Marketing", "Social Media Marketing Overview", "Social Media Advertising"] },
@@ -274,7 +310,9 @@ const courseDatabase: Record<string, any> = {
     title: "Stock Marketing",
     description: "Master technical analysis, derivative trading, market timing, and risk management.",
     duration: "8 Weeks", lessons: "70+ Lessons", level: "Intermediate", students: "2,800+",
-    image: "/finance.jpg", // Fixed Path
+    image: "/finance.jpg", 
+    instructorName: "Sumith D",
+    instructorDesc: "An industry expert with extensive experience in Stock Marketing, focusing on financial markets, technical analysis, and risk management.",
     modules: [
       { title: "Introduction to Indian Financial Markets", topics: ["Indian Financial Market Overview", "Issue Process and Public Issues"] },
       { title: "Market Operations and Intermediaries", topics: ["Market Intermediaries and Trade Execution", "Corporate Actions and Cross Margining"] },
@@ -291,6 +329,9 @@ export default function CourseDetailsPage() {
   const params = useParams();
   const rawSlug = (params?.slug as string) || "";
   const [openModule, setOpenModule] = useState<number | null>(0); 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   // --- SMART SLUG MATCHER ---
   const normalizedSlug = rawSlug.toLowerCase();
@@ -469,7 +510,7 @@ export default function CourseDetailsPage() {
                 </div>
               </section>
 
-              {/* SECTION: CERTIFICATE (Fixed Path) */}
+              {/* SECTION: CERTIFICATE */}
               <section id="certificate" className="scroll-mt-24">
                 <h2 className="text-3xl font-extrabold text-[#0B3B7A] mb-6 flex items-center gap-3">
                   <Award className="w-8 h-8 text-[#38BDF8]" /> Official Certificate
@@ -535,18 +576,18 @@ export default function CourseDetailsPage() {
                   <div className="absolute top-0 right-0 w-48 h-48 bg-[#38BDF8] rounded-full -mr-20 -mt-20 opacity-20 z-0"></div>
                   
                   <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-md flex-shrink-0 relative z-10 bg-white">
-                    <img src="https://ui-avatars.com/api/?name=Kranthi+Kunta&background=38BDF8&color=0B3B7A&size=200" alt="Kranthi Kunta" className="w-full h-full object-cover" />
+                    <img src={`https://ui-avatars.com/api/?name=${course.instructorName}&background=38BDF8&color=0B3B7A&size=200`} alt={course.instructorName} className="w-full h-full object-cover" />
                   </div>
                   
                   <div className="text-center md:text-left relative z-10 flex-grow text-white">
                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4">
-                      <h3 className="text-2xl font-extrabold">Kranthi Kunta</h3>
+                      <h3 className="text-2xl font-extrabold">{course.instructorName}</h3>
                       <span className="bg-[#38BDF8]/20 text-[#38BDF8] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
                         Lead Mentor
                       </span>
                     </div>
                     <p className="text-blue-100 leading-relaxed mb-6 font-medium">
-                      An industry expert with extensive experience bridging the gap between academic learning and corporate demands. Kranthi focuses heavily on hands-on deployment and real-world problem solving.
+                      {course.instructorDesc}
                     </p>
                   </div>
                 </div>
@@ -577,7 +618,7 @@ export default function CourseDetailsPage() {
                     </Button>
                   </Link>
                   <Link href="#expert-form" className="block">
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white font-bold h-14 rounded-xl shadow-md transition-all cursor-pointer">
+                    <Button className="w-full bg-[#0B3B7A] hover:bg-[#38BDF8] text-white font-bold h-14 rounded-xl shadow-md transition-all cursor-pointer">
                       Talk to an Expert
                     </Button>
                   </Link>
@@ -598,33 +639,92 @@ export default function CourseDetailsPage() {
               <p className="text-gray-600">Fill out the form below to enroll or talk to our academic counselors.</p>
             </div>
             
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            {/* SECURE API FORM INTEGRATION */}
+            <form className="space-y-6" onSubmit={async (e) => {
+              e.preventDefault();
+              
+              // 1. Capture the form element IMMEDIATELY before any async code runs
+              const formElement = e.currentTarget;
+              
+              setIsSubmitting(true);
+              setFormError(null);
+              setIsSuccess(false);
+              
+              try {
+                const formData = new FormData(formElement);
+                const payload = {
+                  name: formData.get("fullName"),
+                  phone: formData.get("phone"),
+                  email: formData.get("email"),
+                  courseOfInterest: formData.get("course"),
+                  formType: "course-apply", 
+                  sourceForm: "Course Detail Page"
+                };
+                
+                const response = await fetch('/api/lead', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload),
+                });
+                
+                if (response.ok) {
+                  setIsSuccess(true);
+                  // 2. Safely use the captured element here to clear the form
+                  formElement.reset(); 
+                  setTimeout(() => setIsSuccess(false), 8000); 
+                } else {
+                  const errorText = await response.text();
+                  console.error("Backend validation failed:", errorText);
+                  setFormError("Server error: Data validation failed. Please check your inputs.");
+                }
+              } catch (error) {
+                console.error("Network Fetch error:", error);
+                setFormError("Network error. Please check your internet connection and try again.");
+              } finally {
+                setIsSubmitting(false);
+              }
+            }}>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Full Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-transparent outline-none" placeholder="John Doe" required />
+                  <input type="text" name="fullName" disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white text-gray-900 focus:border-[#38BDF8] outline-none disabled:opacity-50" placeholder="John Doe" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-transparent outline-none" placeholder="+91 98765 43210" required />
+                  <input type="tel" name="phone" disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white text-gray-900 focus:border-[#38BDF8] outline-none disabled:opacity-50" placeholder="+91 98765 43210" required />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Email Address</label>
-                <input type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-transparent outline-none" placeholder="john@example.com" required />
+                <input type="email" name="email" disabled={isSubmitting} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white text-gray-900 focus:border-[#38BDF8] outline-none disabled:opacity-50" placeholder="john@example.com" required />
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Course of Interest</label>
-                <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 outline-none" value={course.title} readOnly />
+                <input type="text" name="course" className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-gray-100 text-gray-700 font-medium outline-none" value={course.title} readOnly />
               </div>
+
+              {formError && (
+                 <div className="p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl text-sm font-bold">
+                   {formError}
+                 </div>
+              )}
               
-              <Button type="submit" className="w-full bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all cursor-pointer">
-                Submit Details
+              <Button type="submit" disabled={isSubmitting} className="w-full bg-[#0B3B7A] hover:bg-[#0B3B7A]/90 text-white font-bold h-14 text-lg rounded-xl shadow-lg transition-all cursor-pointer disabled:opacity-70">
+                {isSubmitting ? "Submitting Request..." : "Submit Details"}
               </Button>
               
-              <p className="text-xs text-center text-gray-500 mt-4">By submitting, you agree to our terms and privacy policy. Our team will contact you within 24 hours.</p>
+              {isSuccess && (
+                <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl text-center font-bold animate-in fade-in zoom-in duration-300">
+                  Success! Your request has been sent. Our team will contact you shortly.
+                </div>
+              )}
+              
+              {!isSuccess && !formError && (
+                <p className="text-xs text-center text-gray-500 mt-4">By submitting, you agree to our terms and privacy policy. Our team will contact you within 24 hours.</p>
+              )}
             </form>
           </div>
         </div>

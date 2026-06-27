@@ -17,7 +17,7 @@ export const generateMetadata = async ({ params }: { params: Promise<{ id: strin
   const { id } = await params
   const internship = internships.find((i) => i.id === id)
   return {
-    title: `${internship?.title} at ${internship?.company} | SAVVY INTERY`,
+    title: `${internship?.title} at ${internship?.company} | SAVVY INTERN`,
     description: internship?.description,
   }
 }

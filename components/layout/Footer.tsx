@@ -8,14 +8,15 @@ export function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-100 mt-20">
       <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-gray-700">
+        {/* Updated to md:grid-cols-3 since we removed the Programs column */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-gray-700">
           
           {/* Column 1: Company */}
           <div>
             <Link href="/" className="block mb-6 cursor-pointer">
               <Image 
                 src="/SAAVY.png" 
-                alt="Savvy Intery Logo" 
+                alt="Savvy Intern Logo" 
                 width={160}
                 height={160}
                 className="object-contain"
@@ -24,16 +25,7 @@ export function Footer() {
             </Link>
           </div>
 
-          {/* Column 2: Programs */}
-          <div>
-            <h4 className="font-bold text-[#0B3B7A] mb-6">Programs</h4>
-            <ul className="space-y-3 text-sm font-medium">
-              <li><Link href="/courses" className="hover:text-[#38BDF8] transition-colors cursor-pointer">All Programs</Link></li>
-              <li><Link href="/courses" className="hover:text-[#38BDF8] transition-colors cursor-pointer">Internship Tracks</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Support & Legal */}
+          {/* Column 2: Support & Legal */}
           <div>
             <h4 className="font-bold text-[#0B3B7A] mb-6">Support</h4>
             <ul className="space-y-3 text-sm font-medium">
@@ -44,7 +36,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact Info (Updated with Real Data) */}
+          {/* Column 3: Contact Info (Updated with Real Data) */}
           <div>
             <h4 className="font-bold text-[#0B3B7A] mb-6">Contact</h4>
             <ul className="space-y-4 text-sm font-medium">

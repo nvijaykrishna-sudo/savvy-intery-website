@@ -30,16 +30,16 @@ export default function AboutPage() {
             Our mission is to help students, fresh graduates, and aspiring professionals gain practical skills, industry exposure, and real-world experience through internship-focused programs. We bridge the gap between academic knowledge and workplace expectations.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/courses">
-              <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105">
+            <Button asChild size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-[#38BDF8]/90 text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-transform hover:scale-105 cursor-pointer">
+              <Link href="/courses">
                 Explore Programs
-              </Button>
-            </Link>
-            <Link href="/support">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm">
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm cursor-pointer">
+              <Link href="/support#contact-form">
                 Connect With Us
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -250,16 +250,16 @@ export default function AboutPage() {
             Become part of a growing network of learners, mentors, and professionals dedicated to continuous learning and personal growth. Together, let's build skills, create opportunities, and shape successful futures.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/courses">
-              <Button size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-white text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-colors">
+            <Button asChild size="lg" className="w-full sm:w-auto bg-[#38BDF8] hover:bg-white text-[#0B3B7A] rounded-full h-14 px-10 font-extrabold shadow-lg transition-colors cursor-pointer">
+              <Link href="/courses">
                 Start Learning
-              </Button>
-            </Link>
-            <Link href="/support">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/30 hover:bg-white/10 text-white rounded-full h-14 px-10 font-bold transition-colors">
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-white/30 hover:bg-white/10 text-white rounded-full h-14 px-10 font-bold transition-colors cursor-pointer">
+              <Link href="/support#contact-form">
                 Contact Us
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -68,7 +68,7 @@ export default function CareersPage() {
                     Explore Opportunities
                   </Button>
                 </Link>
-                <Link href="#apply-form">
+                <Link href="/courses">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white/20 bg-transparent text-white hover:bg-white/10 rounded-full h-14 px-10 font-bold backdrop-blur-sm cursor-pointer">
                     Apply Now
                   </Button>
@@ -218,95 +218,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 6. APPLICATION FORM SECTION (LOCAL IMAGE) */}
-      <section id="apply-form" className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row">
-            
-            {/* Left: Image & Info Area */}
-            <div className="lg:w-2/5 bg-[#0B3B7A] text-white relative overflow-hidden flex flex-col justify-center p-8 md:p-12">
-              <div className="absolute inset-0 opacity-20">
-                <img src="/form-bg.jpg" alt="Professional applying" className="w-full h-full object-cover" />
-              </div>
-              <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Apply For An Internship</h2>
-                <p className="text-blue-100 text-lg mb-8">Take the first step toward a rewarding career. Fill out the form and our admissions team will contact you shortly.</p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-[#38BDF8]" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-blue-200">Fast Processing</p>
-                      <p className="font-bold">24-48 Hour Response</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                      <Award className="w-5 h-5 text-[#38BDF8]" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-blue-200">Verified</p>
-                      <p className="font-bold">Certified Programs</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right: Form Area */}
-            <div className="lg:w-3/5 p-8 md:p-12">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="font-semibold text-gray-700 text-sm">Full Name</label>
-                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="John Doe" required />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-semibold text-gray-700 text-sm">Email Address</label>
-                    <input type="email" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="john@example.com" required />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-semibold text-gray-700 text-sm">Mobile Number</label>
-                    <input type="tel" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="+91 98765 43210" required />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-semibold text-gray-700 text-sm">Current Qualification</label>
-                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="B.Tech Final Year" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-semibold text-gray-700 text-sm">College / University</label>
-                    <input type="text" className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" placeholder="University Name" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-semibold text-gray-700 text-sm">Preferred Program</label>
-                    <select className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all bg-white">
-                      <option>Full Stack Web Development</option>
-                      <option>Artificial Intelligence</option>
-                      <option>Data Analytics</option>
-                      <option>Digital Marketing</option>
-                      <option>UI/UX Design</option>
-                      <option>Cyber Security</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="font-semibold text-gray-700 text-sm">Message (Optional)</label>
-                  <textarea className="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#38BDF8] focus:border-[#38BDF8] outline-none transition-all" rows={4} placeholder="Tell us about your goals..."></textarea>
-                </div>
-
-                <Button type="submit" className="w-full h-14 bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white font-extrabold rounded-xl shadow-lg transition-all text-lg cursor-pointer">
-                  Submit Application
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. FINAL CTA */}
+      {/* 6. FINAL CTA */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/50 w-full">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3B7A] mb-6">Success Starts With Action</h2>
@@ -314,13 +226,14 @@ export default function CareersPage() {
             Ready to gain practical experience and build valuable skills? Join SAVVY INTERN and take the next step toward your professional growth.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="#apply-form">
+            <Link href="/courses">
               <Button size="lg" className="w-full sm:w-auto bg-[#0B3B7A] hover:bg-[#38BDF8] hover:text-[#0B3B7A] text-white rounded-full h-14 px-10 font-bold shadow-lg cursor-pointer transition-colors">
                 Apply Today
               </Button>
             </Link>
             <Link href="/support">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-[#0B3B7A] text-[#0B3B7A] hover:bg-[#0B3B7A] hover:text-white rounded-full h-14 px-10 font-bold cursor-pointer transition-colors">
+              {/* FIXED: Removed the dark/black colors and made it a clean, bright white button that glows blue on hover */}
+              <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white border-2 border-gray-200 text-[#0B3B7A] hover:border-[#38BDF8] hover:bg-blue-50/50 rounded-full h-14 px-10 font-bold cursor-pointer transition-all shadow-sm">
                 Talk To An Expert
               </Button>
             </Link>
@@ -385,7 +298,7 @@ function InternshipCard({ title, image, duration, mode, icon: Icon, description,
       </div>
 
       <div className="p-6 md:p-8 pt-0 mt-auto">
-        <Link href="#apply-form" className="block w-full">
+        <Link href="/courses" className="block w-full">
           <Button className="w-full h-12 bg-white border-2 border-[#0B3B7A] text-[#0B3B7A] font-bold rounded-xl shadow-sm group-hover:bg-[#0B3B7A] group-hover:text-white transition-colors cursor-pointer flex items-center justify-center">
             Apply Now <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

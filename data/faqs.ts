@@ -75,14 +75,14 @@ export const faqs: FAQ[] = [
   {
     id: 'faq-010',
     category: 'General',
-    question: 'Who are the mentors at SAVVY INTERY?',
+    question: 'Who are the mentors at SAVVY INTERN?',
     answer:
       'Our mentors are senior professionals with 5+ years of experience from top tech companies like Google, Amazon, Microsoft, and Meta. They bring real-world industry insights to the learning experience.',
   },
   {
     id: 'faq-011',
     category: 'General',
-    question: 'What makes SAVVY INTERY different?',
+    question: 'What makes SAVVY INTERN different?',
     answer:
       'We focus on practical, job-ready skills with industry mentorship, real project experience, and strong placement support. Our curriculum is regularly updated based on industry demands.',
   },

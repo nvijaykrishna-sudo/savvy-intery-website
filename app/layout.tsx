@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Savvy Intery | Elevate Your Skills",
+  title: "Savvy Intern | Elevate Your Skills",
   description: "Industry-focused internship programs designed to help students gain practical experience.",
 };
 
